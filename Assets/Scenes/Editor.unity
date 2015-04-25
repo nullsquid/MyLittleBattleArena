@@ -123,8 +123,9 @@ MonoBehaviour:
   levelTiles:
   - {fileID: 146756, guid: abe2e73721bcb4635b4742a77ce85bc3, type: 2}
   - {fileID: 141394, guid: 69c4a84ea5e334ed1a77c9e1edf416ed, type: 2}
-  - {fileID: 188036, guid: 4f5efe597c9d748399dc71e3aec504d7, type: 2}
   - {fileID: 133322, guid: 4b689591010d54b39adbef33c2b62ae0, type: 2}
+  - {fileID: 133322, guid: eb3e39edb40184ff19ff31b7d52771f1, type: 2}
+  - {fileID: 141394, guid: 02234a2b40706431d8b4fb29fcdf037e, type: 2}
   - {fileID: 162114, guid: c44e76f774afcbb49b062a30066c7ffd, type: 2}
   - {fileID: 197108, guid: efa6fad1eec0e6d4c8fed963bebf4f2c, type: 2}
   inEditMode: 1

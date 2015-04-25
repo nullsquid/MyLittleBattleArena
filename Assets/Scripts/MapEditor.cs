@@ -83,7 +83,7 @@ public class MapEditor : MonoBehaviour {
 					MapEditorSaving.TileInfo newTile = new MapEditorSaving.TileInfo();
 					newTile.xPos = x;
 					newTile.yPos = y;
-					newTile.rotation = targetTile.transform.eulerAngles.z;
+					newTile.rotation = Mathf.RoundToInt(targetTile.transform.eulerAngles.z);
 					newTile.type = targetTile.typeIndex;
 					saveMapData.tiles.Add(newTile);
 				}
