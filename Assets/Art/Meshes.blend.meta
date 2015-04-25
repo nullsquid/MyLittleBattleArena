@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 4fd768b4173934e8f80c3ceacc67fb6c
+timeCreated: 1429930304
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Character_Frame
+    100002: Circle
+    100004: Circle_Symbol
+    100006: Grass
+    100008: Hub
+    100010: //RootNode
+    100012: Square
+    100014: Square_001
+    100016: Square_Symbol
+    100018: Tree
+    100020: Triangle_Symbol
+    100022: Turret
+    100024: Turret_Barrel
+    100026: Triangle
+    400000: Character_Frame
+    400002: Circle
+    400004: Circle_Symbol
+    400006: Grass
+    400008: Hub
+    400010: //RootNode
+    400012: Square
+    400014: Square_001
+    400016: Square_Symbol
+    400018: Tree
+    400020: Triangle_Symbol
+    400022: Turret
+    400024: Turret_Barrel
+    400026: Triangle
+    2300000: Character_Frame
+    2300002: Circle
+    2300004: Circle_Symbol
+    2300006: Grass
+    2300008: Hub
+    2300010: Square
+    2300012: Square_001
+    2300014: Square_Symbol
+    2300016: Tree
+    2300018: Triangle_Symbol
+    2300020: Turret
+    2300022: Turret_Barrel
+    2300024: Triangle
+    3300000: Character_Frame
+    3300002: Circle
+    3300004: Circle_Symbol
+    3300006: Grass
+    3300008: Hub
+    3300010: Square
+    3300012: Square_001
+    3300014: Square_Symbol
+    3300016: Tree
+    3300018: Triangle_Symbol
+    3300020: Turret
+    3300022: Turret_Barrel
+    3300024: Triangle
+    4300000: Tree
+    4300002: Circle
+    4300004: Square_001
+    4300006: Square
+    4300008: Hub
+    4300010: Turret_Barrel
+    4300012: Turret
+    4300014: Grass
+    4300016: Circle_Symbol
+    4300018: Triangle_Symbol
+    4300020: Square_Symbol
+    4300022: Character_Frame
+    4300024: Triangle
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 0
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
