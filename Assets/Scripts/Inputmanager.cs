@@ -10,7 +10,7 @@ public class Inputmanager : MonoBehaviour {
 
 	void Update(){
 
-	P1_Fire = Input.get
+	//P1_Fire = Input.get
 
 	}
 }
