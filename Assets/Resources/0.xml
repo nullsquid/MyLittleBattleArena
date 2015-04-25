@@ -11,10 +11,22 @@
     <type>0</type>
   </Tiles>
   <Tiles>
+    <xPos>7</xPos>
+    <yPos>0</yPos>
+    <rotation>90.00001</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
     <xPos>8</xPos>
     <yPos>0</yPos>
     <rotation>0</rotation>
     <type>4</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>0</yPos>
+    <rotation>180.000015</rotation>
+    <type>1</type>
   </Tiles>
   <Tiles>
     <xPos>10</xPos>
@@ -59,13 +71,13 @@
     <type>5</type>
   </Tiles>
   <Tiles>
-    <xPos>10</xPos>
-    <yPos>3</yPos>
+    <xPos>0</xPos>
+    <yPos>4</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>0</xPos>
+    <xPos>7</xPos>
     <yPos>4</yPos>
     <rotation>0</rotation>
     <type>0</type>
@@ -83,10 +95,46 @@
     <type>0</type>
   </Tiles>
   <Tiles>
+    <xPos>7</xPos>
+    <yPos>5</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
     <xPos>0</xPos>
     <yPos>6</yPos>
     <rotation>0</rotation>
     <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>6</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>6</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>7</yPos>
+    <rotation>90.00001</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>7</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>7</yPos>
+    <rotation>90.00001</rotation>
+    <type>1</type>
   </Tiles>
   <Tiles>
     <xPos>9</xPos>
@@ -96,6 +144,12 @@
   </Tiles>
   <Tiles>
     <xPos>10</xPos>
+    <yPos>7</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
     <yPos>7</yPos>
     <rotation>0</rotation>
     <type>3</type>
@@ -115,6 +169,12 @@
   <Tiles>
     <xPos>6</xPos>
     <yPos>8</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>8</yPos>
     <rotation>0</rotation>
     <type>1</type>
   </Tiles>
@@ -131,6 +191,12 @@
     <type>1</type>
   </Tiles>
   <Tiles>
+    <xPos>0</xPos>
+    <yPos>9</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
     <xPos>3</xPos>
     <yPos>9</yPos>
     <rotation>0</rotation>
@@ -145,29 +211,23 @@
   <Tiles>
     <xPos>6</xPos>
     <yPos>9</yPos>
-    <rotation>180.000061</rotation>
+    <rotation>180.000076</rotation>
     <type>1</type>
   </Tiles>
   <Tiles>
     <xPos>7</xPos>
     <yPos>9</yPos>
-    <rotation>180.000061</rotation>
+    <rotation>180.000076</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>8</xPos>
     <yPos>9</yPos>
-    <rotation>180.000061</rotation>
+    <rotation>180.000076</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>9</xPos>
-    <yPos>9</yPos>
-    <rotation>180.000061</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>13</xPos>
     <yPos>9</yPos>
     <rotation>0</rotation>
     <type>1</type>
@@ -195,12 +255,6 @@
     <yPos>10</yPos>
     <rotation>0</rotation>
     <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>13</xPos>
-    <yPos>10</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
@@ -239,12 +293,6 @@
     <type>3</type>
   </Tiles>
   <Tiles>
-    <xPos>13</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
     <xPos>0</xPos>
     <yPos>12</yPos>
     <rotation>0</rotation>
@@ -259,7 +307,7 @@
   <Tiles>
     <xPos>3</xPos>
     <yPos>12</yPos>
-    <rotation>180.000061</rotation>
+    <rotation>180.000076</rotation>
     <type>1</type>
   </Tiles>
   <Tiles>
@@ -289,25 +337,31 @@
   <Tiles>
     <xPos>8</xPos>
     <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
+    <rotation>270</rotation>
+    <type>3</type>
   </Tiles>
   <Tiles>
     <xPos>9</xPos>
     <yPos>12</yPos>
     <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>12</yPos>
+    <rotation>270</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>11</xPos>
     <yPos>12</yPos>
-    <rotation>0</rotation>
+    <rotation>270</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>12</xPos>
     <yPos>12</yPos>
-    <rotation>0</rotation>
+    <rotation>270</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
