@@ -8,7 +8,10 @@ public class MapEditor : MonoBehaviour {
 	[SerializeField] private Transform backgroundGeometry;
 	[SerializeField] private Transform root, mirrorRoot;
 	[SerializeField] private GameObject[] levelTiles;
-	public bool inEditMode = true;
+	[SerializeField] private Material defaultMaterial;
+	[SerializeField] private Material blueTeamMaterial;
+	[SerializeField] private Material redTeamMaterial;
+    public bool inEditMode = true;
 	private int currentTileIndex;
 	private const float zDistance = 0f;
 	[SerializeField] private Transform tileBrushTr;
@@ -103,6 +106,7 @@ public class MapEditor : MonoBehaviour {
 				Quaternion newRotation = Quaternion.Euler(new Vector3(0f,0f,tile.rotation));
 				CreateAtPosition(tile.xPos, tile.yPos, newRotation);
 			}
+			changedDataThisFrame = true;
 		}
 	}
 	private void Update () {
@@ -114,7 +118,10 @@ public class MapEditor : MonoBehaviour {
 		if (tileBrushTr.gameObject.activeSelf != inEditMode){
 			tileBrushTr.gameObject.SetActive(inEditMode);
 		}
-		changedDataThisFrame = false;
+		if (changedDataThisFrame){
+			RecolorBuildings();
+			changedDataThisFrame = false;
+		}
     }
 	private void HandlePlacingTile(){
 		bool lmbDown = Input.GetMouseButton(0);
@@ -172,9 +179,38 @@ public class MapEditor : MonoBehaviour {
         if (mapData[xPos, yPos] == null){
             mapData[xPos, yPos] = newMapTile;
         }
-		//Debug.Log(newTileTr.localPosition + "  " + newTileTr.name);
 		return newMapTile;
 	}
+	private void RecolorBuildings(){
+		foreach (Transform t in root){
+			if (t.GetComponent<Building>() != null){
+				MeshRenderer renderer = t.GetComponent<MeshRenderer>();
+				if (renderer != null){
+					renderer.material = blueTeamMaterial;
+				}
+				foreach (Transform r in t){
+					renderer = r.GetComponent<MeshRenderer>();
+					if (renderer != null){
+						renderer.material = blueTeamMaterial;
+                    }
+                }
+            }
+        }
+        foreach (Transform t in mirrorRoot){
+			if (t.GetComponent<Building>() != null){
+				MeshRenderer renderer = t.GetComponent<MeshRenderer>();
+				if (renderer != null){
+					renderer.material = redTeamMaterial;
+                }
+				foreach (Transform r in t){
+					renderer = r.GetComponent<MeshRenderer>();
+					if (renderer != null){
+						renderer.material = redTeamMaterial;
+                    }
+                }
+            }
+		}
+    }
 	private void RotateAtPosition(int xPos, int yPos){
 		if (!changedDataThisFrame){
 			if (mapData[xPos, yPos] != null){

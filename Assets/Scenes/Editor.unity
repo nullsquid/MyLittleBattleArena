@@ -128,6 +128,9 @@ MonoBehaviour:
   - {fileID: 141394, guid: 02234a2b40706431d8b4fb29fcdf037e, type: 2}
   - {fileID: 162114, guid: c44e76f774afcbb49b062a30066c7ffd, type: 2}
   - {fileID: 197108, guid: efa6fad1eec0e6d4c8fed963bebf4f2c, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: d48e6c19ee76c421287ed4873803155f, type: 2}
+  blueTeamMaterial: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
+  redTeamMaterial: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
   inEditMode: 1
   tileBrushTr: {fileID: 493795905}
   mapDimensions: {x: 43, y: 32}
@@ -283,7 +286,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .800002873, g: .800002873, b: .800002873, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
