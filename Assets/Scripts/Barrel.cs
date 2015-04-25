@@ -15,6 +15,6 @@ public class Barrel : MonoBehaviour {
 	
 	}
 	void Shoot(GameObject target){
-
+		//logic for just firing the projectile
 	}
 }

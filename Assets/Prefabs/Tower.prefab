@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 456684}
   - 33: {fileID: 3305752}
   - 23: {fileID: 2367694}
+  - 114: {fileID: 11444666}
   m_Layer: 9
   m_Name: Barrel
   m_TagString: Untagged
@@ -28,6 +29,7 @@ GameObject:
   - 33: {fileID: 3303630}
   - 23: {fileID: 2345274}
   - 58: {fileID: 5861032}
+  - 114: {fileID: 11450870}
   m_Layer: 9
   m_Name: Tower
   m_TagString: Untagged
@@ -135,6 +137,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .75
+--- !u!114 &11444666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e8f66f6703a144a95455461a369fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
+  tower: {fileID: 0}
+--- !u!114 &11450870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80faaf9ade9e4764291f12a08b266307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sight: 0
+  health: 0
+  targets: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
