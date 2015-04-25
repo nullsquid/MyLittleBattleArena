@@ -19,6 +19,7 @@ public class Barrel : MonoBehaviour {
 		//if(tower.target!=null){
 		//	target = tower.target;
 		//}
+		Track();
 		if(tower.targets!=null){
 			target = tower.targets[0];
 			Track ();

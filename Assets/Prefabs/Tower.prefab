@@ -29,8 +29,8 @@ GameObject:
   - 33: {fileID: 3303630}
   - 23: {fileID: 2345274}
   - 58: {fileID: 5861032}
-  - 114: {fileID: 11450870}
   - 58: {fileID: 5874020}
+  - 114: {fileID: 11434258}
   m_Layer: 9
   m_Name: Tower
   m_TagString: Untagged
@@ -151,6 +151,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .75
+--- !u!114 &11434258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37260517b456454bbab196e80fe63f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sight: 0
+  health: 10
+  cooldown: 2
+  projectile: {fileID: 0}
+  targets: []
 --- !u!114 &11444666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,24 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 184220, guid: a86f974dad14c3444a67da1864dbfa44, type: 2}
-  tower: {fileID: 11450870}
+  tower: {fileID: 11434258}
   target: {fileID: 0}
---- !u!114 &11450870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80faaf9ade9e4764291f12a08b266307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sight: 10
-  health: 0
-  cooldown: 3
-  projectile: {fileID: 0}
-  targets: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

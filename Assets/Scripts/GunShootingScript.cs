@@ -8,8 +8,8 @@ public class GunShootingScript : MonoBehaviour
 	public float timeBetweenBullets = 0.15f;
 	public float range = 100f;
 	
-	public Rigidbody bulletPrefab;
-	public float bulletSpeed = 10f;
+	public GameObject bulletPrefab;
+	public float bulletSpeed = 100f;
 	
 	float timer;
 	Ray shootRay;
@@ -63,12 +63,12 @@ public class GunShootingScript : MonoBehaviour
 		gunParticles.Stop ();
 		gunParticles.Play ();
 		
-		gunLine.enabled = true;
+	//	gunLine.enabled = true;
 		gunLine.SetPosition (0, transform.position);
 		
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.up;
-		
+		//RAYCAST don't work in 3d Baby!
 		if(Physics.Raycast (shootRay, out shootHit, range, shootableMask))
 		{
 			
@@ -78,17 +78,17 @@ public class GunShootingScript : MonoBehaviour
 			{
 				//                enemyHealth.TakeDamage (damagePerShot);
 			}
-			gunLine.SetPosition (1, shootHit.point);
+			//gunLine.SetPosition (1, shootHit.point);
 		}
 		else
 		{
-			gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
+			//gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
 		}
 		
 		//OR//
 		
-		//Rigidbody bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as Rigidbody;
-	//	bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+		bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
 		
 		
 	}
