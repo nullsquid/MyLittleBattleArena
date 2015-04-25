@@ -123,10 +123,14 @@ MonoBehaviour:
   levelTiles:
   - {fileID: 146756, guid: abe2e73721bcb4635b4742a77ce85bc3, type: 2}
   - {fileID: 141394, guid: 69c4a84ea5e334ed1a77c9e1edf416ed, type: 2}
-  - {fileID: 188036, guid: 4f5efe597c9d748399dc71e3aec504d7, type: 2}
   - {fileID: 133322, guid: 4b689591010d54b39adbef33c2b62ae0, type: 2}
+  - {fileID: 133322, guid: eb3e39edb40184ff19ff31b7d52771f1, type: 2}
+  - {fileID: 141394, guid: 02234a2b40706431d8b4fb29fcdf037e, type: 2}
   - {fileID: 162114, guid: c44e76f774afcbb49b062a30066c7ffd, type: 2}
   - {fileID: 197108, guid: efa6fad1eec0e6d4c8fed963bebf4f2c, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: d48e6c19ee76c421287ed4873803155f, type: 2}
+  blueTeamMaterial: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
+  redTeamMaterial: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
   inEditMode: 1
   tileBrushTr: {fileID: 493795905}
   mapDimensions: {x: 43, y: 32}
@@ -282,7 +286,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .800002873, g: .800002873, b: .800002873, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

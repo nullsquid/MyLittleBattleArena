@@ -2,37 +2,37 @@
 <Map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <id>2</id>
   <mapName>Conjurer's Fjord</mapName>
-  <mapWidth>21</mapWidth>
-  <mapheight>16</mapheight>
+  <mapWidth>27</mapWidth>
+  <mapheight>20</mapheight>
   <Tiles>
-    <xPos>0</xPos>
+    <xPos>1</xPos>
+    <yPos>0</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>0</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>3</xPos>
+    <yPos>0</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
     <yPos>0</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>7</xPos>
-    <yPos>0</yPos>
-    <rotation>90.00001</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>8</xPos>
+    <xPos>6</xPos>
     <yPos>0</yPos>
     <rotation>0</rotation>
-    <type>4</type>
-  </Tiles>
-  <Tiles>
-    <xPos>9</xPos>
-    <yPos>0</yPos>
-    <rotation>180.000015</rotation>
     <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>10</xPos>
-    <yPos>0</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>11</xPos>
@@ -44,16 +44,112 @@
     <xPos>12</xPos>
     <yPos>0</yPos>
     <rotation>0</rotation>
-    <type>0</type>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>20</xPos>
+    <yPos>0</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
+    <yPos>1</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>1</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>1</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>1</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>1</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>1</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>1</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>1</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>13</xPos>
     <yPos>1</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
+    <yPos>2</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>2</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>2</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>2</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>2</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>2</yPos>
+    <rotation>90</rotation>
+    <type>5</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>2</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>13</xPos>
     <yPos>2</yPos>
     <rotation>0</rotation>
     <type>0</type>
@@ -65,440 +161,698 @@
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>3</xPos>
+    <xPos>1</xPos>
     <yPos>3</yPos>
     <rotation>0</rotation>
-    <type>5</type>
+    <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
+    <yPos>4</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
     <yPos>4</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>7</xPos>
+    <xPos>4</xPos>
     <yPos>4</yPos>
     <rotation>0</rotation>
-    <type>0</type>
+    <type>6</type>
   </Tiles>
   <Tiles>
-    <xPos>9</xPos>
-    <yPos>4</yPos>
-    <rotation>0</rotation>
-    <type>4</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
+    <xPos>1</xPos>
     <yPos>5</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>7</xPos>
+    <xPos>9</xPos>
+    <yPos>5</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
     <yPos>5</yPos>
     <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>6</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>6</yPos>
-    <rotation>270</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>7</xPos>
-    <yPos>6</yPos>
-    <rotation>270</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>7</yPos>
-    <rotation>90.00001</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>7</yPos>
-    <rotation>270</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>7</xPos>
-    <yPos>7</yPos>
-    <rotation>90.00001</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>9</xPos>
-    <yPos>7</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>10</xPos>
-    <yPos>7</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>12</xPos>
-    <yPos>7</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>8</yPos>
-    <rotation>0</rotation>
-    <type>4</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>8</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>8</yPos>
-    <rotation>270</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>7</xPos>
-    <yPos>8</yPos>
-    <rotation>0</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>9</xPos>
-    <yPos>8</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>17</xPos>
-    <yPos>8</yPos>
-    <rotation>90.00001</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>9</yPos>
-    <rotation>0</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>9</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>9</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>9</yPos>
-    <rotation>180.000076</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>7</xPos>
-    <yPos>9</yPos>
-    <rotation>180.000076</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>8</xPos>
-    <yPos>9</yPos>
-    <rotation>180.000076</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>9</xPos>
-    <yPos>9</yPos>
-    <rotation>0</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>10</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>10</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>10</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>5</xPos>
-    <yPos>10</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>1</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>5</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>11</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>1</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>12</yPos>
-    <rotation>180.000076</rotation>
-    <type>1</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>5</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>6</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>7</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>8</xPos>
-    <yPos>12</yPos>
-    <rotation>270</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>9</xPos>
-    <yPos>12</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>10</xPos>
-    <yPos>12</yPos>
-    <rotation>270</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>11</xPos>
-    <yPos>12</yPos>
-    <rotation>270</rotation>
+    <yPos>5</yPos>
+    <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>12</xPos>
-    <yPos>12</yPos>
-    <rotation>270</rotation>
+    <xPos>1</xPos>
+    <yPos>6</yPos>
+    <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>13</xPos>
-    <yPos>12</yPos>
-    <rotation>90.00001</rotation>
+    <xPos>2</xPos>
+    <yPos>6</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>6</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>6</yPos>
+    <rotation>180</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>6</yPos>
+    <rotation>90</rotation>
     <type>1</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
-    <yPos>13</yPos>
+    <yPos>7</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>7</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>7</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>7</yPos>
+    <rotation>90</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>7</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>8</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>1</xPos>
-    <yPos>13</yPos>
+    <yPos>8</yPos>
     <rotation>0</rotation>
-    <type>3</type>
+    <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>2</xPos>
-    <yPos>13</yPos>
+    <yPos>8</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>8</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>8</yPos>
     <rotation>0</rotation>
     <type>3</type>
   </Tiles>
   <Tiles>
     <xPos>0</xPos>
-    <yPos>14</yPos>
+    <yPos>9</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>1</xPos>
-    <yPos>14</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>2</xPos>
-    <yPos>14</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>14</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>14</yPos>
-    <rotation>0</rotation>
-    <type>3</type>
-  </Tiles>
-  <Tiles>
-    <xPos>0</xPos>
-    <yPos>15</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>1</xPos>
-    <yPos>15</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>2</xPos>
-    <yPos>15</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>3</xPos>
-    <yPos>15</yPos>
-    <rotation>0</rotation>
-    <type>0</type>
-  </Tiles>
-  <Tiles>
-    <xPos>4</xPos>
-    <yPos>15</yPos>
+    <yPos>9</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>5</xPos>
-    <yPos>15</yPos>
+    <yPos>9</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>9</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>9</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>9</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>5</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>10</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>11</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>11</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>11</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>11</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>11</yPos>
+    <rotation>180</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>11</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>11</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>11</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>12</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>12</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>12</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>12</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>6</xPos>
-    <yPos>15</yPos>
+    <yPos>12</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>15</xPos>
+    <yPos>12</yPos>
+    <rotation>180</rotation>
+    <type>5</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>13</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>13</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>13</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>13</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>13</yPos>
+    <rotation>180</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>13</yPos>
+    <rotation>180</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>13</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>0</xPos>
+    <yPos>14</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>3</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>14</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>14</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>7</xPos>
-    <yPos>15</yPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>14</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>14</yPos>
+    <rotation>180</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>13</xPos>
+    <yPos>14</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>14</xPos>
+    <yPos>14</yPos>
+    <rotation>270</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
     <yPos>15</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>15</xPos>
+    <xPos>2</xPos>
     <yPos>15</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>16</xPos>
+    <xPos>3</xPos>
     <yPos>15</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>16</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>17</xPos>
-    <yPos>15</yPos>
+    <xPos>2</xPos>
+    <yPos>16</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
-    <xPos>18</xPos>
-    <yPos>15</yPos>
+    <xPos>3</xPos>
+    <yPos>16</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>4</xPos>
+    <yPos>16</yPos>
+    <rotation>0</rotation>
+    <type>2</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>16</yPos>
+    <rotation>0</rotation>
+    <type>3</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>3</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>4</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>17</yPos>
+    <rotation>270</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>19</xPos>
+    <yPos>17</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>1</xPos>
+    <yPos>18</yPos>
+    <rotation>180</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>2</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>3</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>4</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>5</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>6</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>18</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
   <Tiles>
     <xPos>19</xPos>
-    <yPos>15</yPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>20</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>21</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>22</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>23</xPos>
+    <yPos>18</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>7</xPos>
+    <yPos>19</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>8</xPos>
+    <yPos>19</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>9</xPos>
+    <yPos>19</yPos>
+    <rotation>0</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>10</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>11</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>12</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>16</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>17</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>0</type>
+  </Tiles>
+  <Tiles>
+    <xPos>18</xPos>
+    <yPos>19</yPos>
+    <rotation>90</rotation>
+    <type>1</type>
+  </Tiles>
+  <Tiles>
+    <xPos>22</xPos>
+    <yPos>19</yPos>
     <rotation>0</rotation>
     <type>0</type>
   </Tiles>
