@@ -15,6 +15,7 @@ public class Tower : Building {
 
 	// Use this for initialization
 	void Start () {
+
 	}
 	
 	// Update is called once per frame
@@ -43,7 +44,7 @@ public class Tower : Building {
 	}
 
 	void Idle(){
-
+		//transform.rotation = Quaternion.Slerp(
 	}
 	//void Track(GameObject target){
 	//

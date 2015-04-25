@@ -30,6 +30,7 @@ GameObject:
   - 23: {fileID: 2345274}
   - 58: {fileID: 5861032}
   - 114: {fileID: 11450870}
+  - 58: {fileID: 5874020}
   m_Layer: 9
   m_Name: Tower
   m_TagString: Untagged
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 16, z: 0}
+  m_LocalPosition: {x: 16, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456684}
@@ -72,7 +73,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
+  - {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -96,7 +97,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
+  - {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -132,6 +133,19 @@ CircleCollider2D:
   m_GameObject: {fileID: 162114}
   m_Enabled: 1
   m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
+--- !u!58 &5874020
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 162114}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -148,8 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e8f66f6703a144a95455461a369fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  tower: {fileID: 0}
+  projectile: {fileID: 184220, guid: a86f974dad14c3444a67da1864dbfa44, type: 2}
+  tower: {fileID: 11450870}
+  target: {fileID: 0}
 --- !u!114 &11450870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,8 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80faaf9ade9e4764291f12a08b266307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sight: 0
+  sight: 10
   health: 0
+  cooldown: 3
+  projectile: {fileID: 0}
   targets: []
 --- !u!1001 &100100000
 Prefab:
