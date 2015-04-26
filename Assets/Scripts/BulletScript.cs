@@ -1,6 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/*TODO:  Ignore Collisions with Own player
+ * Set trail renderer to color of team.
+ * 
+ * 
+ * 
+ */
+
+
 public class BulletScript : MonoBehaviour {
 
 
