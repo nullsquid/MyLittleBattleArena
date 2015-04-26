@@ -5,7 +5,7 @@ public class MineLayer : MonoBehaviour {
 
 
 	public int damagePerShot = 20;
-	private float timeBetweenMines = 2.0f;
+	private float timeBetweenMines = 1.0f;
 	public float range = 100f;
 	
 	public GameObject minePrefab;

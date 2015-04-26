@@ -8,17 +8,20 @@ public class MineExplosion : MonoBehaviour {
 	private float maxRadius = 10.0f;
 	private Vector3 maxRadiusVec;
 	private float startTime;
-	public string teamColor;
+	public float newPitch = 1.0f;
+
+	public AudioClip explosionSound;
+
 	// Use this for initialization
 	void Start () {
 		Invoke ("Fizzle", lifetime);
 		maxRadiusVec = new Vector3(maxRadius, maxRadius, maxRadius);  //no comment
 		//Should starttime be time.time?
 		startTime = Time.time;
-		this.tag = teamColor;
 
-		ColorManager.setColorByTag(this.tag,this.transform.GetChild(0).gameObject);
-
+		AudioSource audio = GetComponent<AudioSource>();
+		audio.pitch = newPitch;
+		audio.Play();
 	}
 	
 	void Update () {
@@ -30,9 +33,10 @@ public class MineExplosion : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {  //Mine explosions must collide with other mine explosions 	//Maybe Use Physics2D.OverlapCircleAll
 		if(other.gameObject.GetComponent<MineTimer>() !=  null){
-			other.gameObject.BroadcastMessage("EXPLODE");
-		}
+			print ("COMBO");
+			other.gameObject.BroadcastMessage("EXPLODE",newPitch);
 
+		}
 		other.gameObject.BroadcastMessage("Damage",1,SendMessageOptions.DontRequireReceiver);
 	}
 

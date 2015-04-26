@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 
 
 
@@ -10,16 +10,34 @@ public class Inputmanager : MonoBehaviour {
 	static public float P1_Horizontal, P1_Vertical, P2_Horizontal, P2_Vertical, P3_Horizontal, P3_Vertical, P4_Horizontal, P4_Vertical;
 	static public bool P1_Fire, P2_Fire, P3_Fire, P4_Fire;
 
+
+
 	public bool keyboardInput = true;
 	public bool joystickInput = false;
 
+	static public int PlayerCountInit = 1;
+	GameObject objectReference;
 
+	List<GameObject> playerList = new List<GameObject>();
 
 	void Start(){
-
-
+	
+		Invoke("numberPlayers", 1.0f);
 
 	}
+
+	 public void AddPlayer(GameObject PlayerReference){//USE LAYERS INSTEAD LATER
+
+		playerList.Add(PlayerReference);
+	}
+
+	void numberPlayers(){
+		int i = 1;
+	          foreach (GameObject player in playerList){
+			player.SendMessage("SetPlayerNumber",i);
+			i++;
+		}
+	 }
 
 	void FixedUpdate(){
 

@@ -27,26 +27,9 @@ public class ProtoGameManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	//find all players
-		Invoke("AssignTeams", 0.1f);
 	}
 
-	void AssignTeams(){
 
-		//Set Player Color Here maybe?
-
-		foreach (GameObject Player in Players){
-			if(Player.tag == "blue"){
-				Player.transform.position = BlueHub.position;
-			}
-			if(Player.tag == "red"){
-				Player.transform.position = RedHub.position;
-			}
-			else{
-				print ("Unassigned Player! " + Player.name + " tagged " + Player.tag);
-			}
-		}
-
-	}
 
 
 	void BodyCounter(int playerNum){
