@@ -3,13 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
   - red
   - blue
->>>>>>> WidgetsBranch
+  - grey
   layers:
   - Default
   - TransparentFX
