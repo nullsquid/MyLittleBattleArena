@@ -3,7 +3,7 @@ using System.Collections;
 
 /*
  * TODO:  Bullet Collisions knock the player out of Whack.  Really badly.
- * 
+ * Player doesn't move on my copy--Shep
  * 
  * 
  * 

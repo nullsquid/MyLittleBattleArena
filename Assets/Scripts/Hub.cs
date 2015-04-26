@@ -5,8 +5,8 @@ public class Hub : Building {
 	float range;
 	List<GameObject> healTargets = new List<GameObject>();
 	float cooldown;
-	float maxCooldown = 2;
-	float healStep;
+	public float maxCooldown = 2;
+	public float healStep = 1;
 	// Use this for initialization
 
 	
@@ -27,6 +27,6 @@ public class Hub : Building {
 	}
 
 	void Heal(GameObject target){
-		target.SendMessage("GetWell", 1);
+		target.SendMessage("GetWell", healStep);
 	}
 }
