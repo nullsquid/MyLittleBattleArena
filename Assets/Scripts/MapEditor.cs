@@ -200,13 +200,14 @@ public class MapEditor : MonoBehaviour {
 				team.teamHub = target.GetComponent<Hub>();
             }
 			AssignTeamMaterial(target, team.teamMaterial);
-			Debug.Log(team.teamName.ToString());
+			team.buildings.Add(newBuilding);
         }else{
 			PlayerMovement newCharacter = target.GetComponent<PlayerMovement>();
 			if (newCharacter != null){
 				newCharacter.thisCharacterData.team = team;
 				AssignTeamMaterial(target, team.teamMaterial);
-			}
+				team.characters.Add(newCharacter);
+            }
 		}
 	}
 	private void AssignTeamMaterial(Transform target, Material mat){
