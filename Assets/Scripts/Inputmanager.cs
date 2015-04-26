@@ -17,35 +17,36 @@ public class Inputmanager : MonoBehaviour {
 
 	void Start(){
 
-		print (Input.GetJoystickNames()[0]);
+
+
 	}
 
-	void Update(){
+	void FixedUpdate(){
 
 		if(keyboardInput){
 
 			P1_Horizontal = Input.GetAxis ("Horizontal1");
 			P1_Vertical = Input.GetAxis("Vertical1");
-			//P1_Fire = Input.GetKey(KeyCode.C);
 			P1_Fire = Input.GetKeyDown(KeyCode.Space);
 
 			P2_Horizontal = Input.GetAxis ("Horizontal2");
 			P2_Vertical = Input.GetAxis("Vertical2");
+			P2_Fire = Input.GetKeyDown(KeyCode.B);
 
+			
 			P3_Horizontal = Input.GetAxis ("Horizontal3");
 			P3_Vertical = Input.GetAxis("Vertical3");
+			P3_Fire = Input.GetKeyDown(KeyCode.M);
 
+			
 			P4_Horizontal = Input.GetAxis ("Horizontal4");
 			P4_Vertical = Input.GetAxis("Vertical4");
+			P4_Fire = Input.GetKeyDown(KeyCode.RightShift);
+
 		}
 
 
-		if(joystickInput){
-
-			//Debug.Log(Input.GetJoystickNames()[0] + " dicks");
-//			Debug.Log(Input.GetJoystickNames()[1] + " ");
-//	Debug.Log(Input.GetJoystickNames()[2] + " ");
-
+		if(joystickInput){  //For Xbox
 
 			P1_Horizontal = Input.GetAxis("DPad_XAxis_1");
 			P1_Vertical = Input.GetAxis("DPad_YAxis_1");
@@ -62,6 +63,8 @@ public class Inputmanager : MonoBehaviour {
 			P4_Horizontal = Input.GetAxis("DPad_XAxis_4");
 			P4_Vertical = Input.GetAxis("DPad_YAxis_4");
 			P4_Fire = Input.GetButton("A_4");
+
+//			print (Input.GetAxis("DPad_XAxis_1") + " " + Input.GetAxis("DPad_XAxis_2") + " " +P3_Horizontal + " " +P4_Horizontal + " " );
 
 //			P2_Horizontal = Input.GetAxis("Joy2 Axis 6");
 //			P2_Vertical = Input.GetAxis("Joy2 Axis 7");

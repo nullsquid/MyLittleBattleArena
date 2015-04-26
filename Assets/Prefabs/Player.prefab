@@ -346,7 +346,6 @@ MonoBehaviour:
   damagePerShot: 20
   range: 100
   minePrefab: {fileID: 145534, guid: 9dbc3d55d67b2409eb9c41cbf40d649b, type: 2}
-  teamColor: 
 --- !u!114 &11475378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,12 +373,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecd85fb93b2e4640a364501eddea15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HomeHub: {fileID: 0}
   GunObject: {fileID: 193878}
   thisCharacterData:
     team: 1
     playerNumber: 1
     health: 1
+    RedMaterial: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
+    BlueMaterial: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
     characterClass: 0
+    playerColor: 0
 --- !u!120 &12073350
 LineRenderer:
   m_ObjectHideFlags: 1

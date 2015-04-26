@@ -28,17 +28,20 @@ public class CharacterData {
 		public int team;
 		public int playerNumber;
 		public int health;
-		
+	    public Material RedMaterial, BlueMaterial;
+
 
 
 	public CharacterClass characterClass;
+	public PlayerColor playerColor;
 	//player team. red/blue tags.
-	public CharacterData(int t, int p, int h, CharacterClass c)
+	public CharacterData(int t, int p, int h, CharacterClass c, PlayerColor s)
 	{
 		team = t;
 		playerNumber = p;
 		health = h;
 		characterClass = c;
+		playerColor = s;
 	}
 }
 
@@ -48,7 +51,7 @@ public class PlayerMovement : MonoBehaviour{
 
 
 	//make this more dynamic
-	GameObject HomeHub;
+	public GameObject HomeHub;
 
 
 	// Normal Movements Variables
@@ -62,11 +65,14 @@ public class PlayerMovement : MonoBehaviour{
 	private float vertInput;
 	private bool fire = false;
 
-	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper);
+	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper,PlayerColor.red);
 
+	private Quaternion startRotation;
 	void Start()
 	{
+		startRotation = this.transform.rotation;
 		SetClass();
+	
 		if(thisCharacterData.team == 1){
 			this.gameObject.tag = "red";
 		}
@@ -74,9 +80,10 @@ public class PlayerMovement : MonoBehaviour{
 		{
 			this.gameObject.tag = "blue";
 		}
-
+		SetColor();
 		walkSpeed = 0.10f;
 		sprintSpeed = walkSpeed + (walkSpeed / 2);
+
 		
 	}
 
@@ -85,8 +92,11 @@ public class PlayerMovement : MonoBehaviour{
 	void FixedUpdate()
 	{
 
-		if(thisCharacterData.health <=0){
+		if(thisCharacterData.health <=0 && !hasDied){
 			DIE();
+		}
+		else if(thisCharacterData.health <=0 && (hasDied == true)){
+			//wait for respwan i guess?
 		}
 		else{
 
@@ -100,11 +110,11 @@ public class PlayerMovement : MonoBehaviour{
 			FireWeapon();
 		}
 		// Move 
-
+			this.transform.rotation = startRotation;
 		Vector2 rawDirection = new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)); //There are propbably some superflous things here but it works.
 		Vector2 directionNormalized = rawDirection.normalized;
 		transform.Translate(directionNormalized * maxSpeed);
-
+		
 		float rotateSpeed = 9999.0f;
 		//Vector3 moveDirection = gameObject.transform.position; 
 
@@ -140,7 +150,7 @@ public class PlayerMovement : MonoBehaviour{
 		case 4:
 			horzInput = Inputmanager.P4_Horizontal;
 			vertInput = Inputmanager.P4_Vertical;
-			fire = Inputmanager.P1_Fire;
+			fire = Inputmanager.P4_Fire;
 			break;
 
 		default :
@@ -154,16 +164,48 @@ public class PlayerMovement : MonoBehaviour{
 
 	}
 
+	void SetColor(){
+		//really not sure if this is the best way.
+		GameObject playerGraphic = transform.Find("RotationCorrection/Player Graphics").gameObject as GameObject;
+
+		switch(thisCharacterData.playerColor){
+
+		case PlayerColor.red:
+			this.gameObject.tag = "red";
+//			print (this.transform.childCount.ToString()+" ");
+			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.RedMaterial;
+			break;
+
+		case PlayerColor.blue:
+			this.gameObject.tag = "blue";
+			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
+
+			//this.transform.Find("RotationCorrection/Player Graphics").GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
+
+			break;
+
+		case PlayerColor.grey:
+			this.gameObject.tag = "grey";
+			break;
+
+		default :
+			this.gameObject.tag = "grey";//not sure if this makes a good default
+			break;
+		}
+
+		this.BroadcastMessage("SetTag", this.gameObject.tag);
+	}
+
 	void SetClass(){
 		//not sure what the point of this was.
 
 		switch(thisCharacterData.characterClass){
 		
 		case CharacterClass.Sniper:
-			print ("Sniper!");
+			//print ("Sniper!");
 			break;
 		case CharacterClass.DemoMan:
-			print ("Demo!");
+			//print ("Demo!");
 			break;
 		case CharacterClass.Melee:
 			print ("melee!");
@@ -197,15 +239,31 @@ public class PlayerMovement : MonoBehaviour{
 
 	}
 
+	bool hasDied = false;
+
 	void DIE(){
-		//stick in purgatory
+		//stick in purgator
+		hasDied = true;
+		print (this.name+ " is DEAD");
 		this.transform.position = HomeHub.transform.position;
+
+		StartCoroutine (Respawn());
 		//hide or blink graphics
 	}
 
-	void Respawn(){
-		this.transform.position = HomeHub.transform.position;
+	IEnumerator Respawn(){
+
+		this.transform.position = HomeHub.transform.position; //to be sure
+
+		yield return new WaitForSeconds(1);
+
+		hasDied = false;
+
 		this.thisCharacterData.health = 1;
+	}
+
+	void Damage(int damageAmount){
+		thisCharacterData.health -= damageAmount;
 	}
 
 }
