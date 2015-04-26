@@ -17,6 +17,6 @@ public abstract class Building : MonoBehaviour {
 		}
 	}
 	public void IsDestroyed(){
-
+		Destroy(this.gameObject);
 	}
 }

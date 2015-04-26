@@ -5,7 +5,7 @@ public class Hub : Building {
 	float range;
 	List<GameObject> healTargets = new List<GameObject>();
 	float cooldown;
-	float maxCooldown;
+	float maxCooldown = 2;
 	float healStep;
 	// Use this for initialization
 
@@ -20,13 +20,13 @@ public class Hub : Building {
 		if(gameObject.tag == other.gameObject.tag){
 			cooldown -= Time.deltaTime;
 			if(cooldown <= 0){
-				Heal ();
+				Heal (other.gameObject);
 				cooldown = maxCooldown;
 			}
 		}
 	}
 
-	void Heal(){
-
+	void Heal(GameObject target){
+		target.SendMessage("GetWell", 1);
 	}
 }
