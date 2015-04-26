@@ -13,9 +13,9 @@ public class Tower : Building {
 	float distanceToTarget;
 	GameObject target;
 	GameObject projectile;
-
+	Collider2D[] inRange;
 	float projectileSpeed;
-	float range;
+	public float range = 2.5f;
 	float rotateSpeed;
 	//Vector2 relativePos;
 	public List<GameObject> targets = new List<GameObject>();
@@ -25,22 +25,39 @@ public class Tower : Building {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		//	hitColliders = Physics2D.OverlapCircle(transform.position, 1);
 		if(targets==null){
 
 		}
-		
-	}
-	void OnTriggerEnter2D(Collider2D other){
 
-		if(other.tag != this.gameObject.tag && !targets.Contains(other.gameObject)){
-			targets.Add(other.gameObject);
+
+		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToIndex());
+		if(inRange.Length >0){
+		for(int i = 0; i<=inRange.Length;i++){
+			Debug.Log(inRange[i].gameObject.GetComponent<PlayerTeam>().teamName);
 
 		}
+		}
+		
+		//Debug.Log(inRange.Length);
+		//if(inRange.
+		//Debug.Log(inRange[2]);
+
 	}
-	void OnTriggerExit2D(Collider2D other){
+	/*void OnTriggerEnter2D(Collider2D other){
+
+		//if(other.gameObject.team != gameObject.team){
+		//if(other.gameObject == team.gameObject){
+			
+		//	targets.Add(other.gameObject);
+		//}
+
+
+		//}
+	}*/
+	/*void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject == targets[0]){
 			targets.RemoveAt(0);
 		}
@@ -48,7 +65,7 @@ public class Tower : Building {
 		
 		//}
 		
-	}
+	}*/
 	
 	public void Idle(){
 		//transform.rotation = Quaternion.Slerp(

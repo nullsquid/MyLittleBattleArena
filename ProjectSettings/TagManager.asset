@@ -12,6 +12,19 @@ TagManager:
   - grey
 >>>>>>> Bomb-Effects
   layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Players
+  - Level
+  - Building
+  - Projectiles
+  - Creep
   - 
   - 
   - 
@@ -31,17 +44,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  m_SortingLayers: []
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

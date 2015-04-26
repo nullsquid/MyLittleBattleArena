@@ -201,12 +201,14 @@ public class MapEditor : MonoBehaviour {
             }
 			AssignTeamMaterial(target, team.teamMaterial);
 			team.buildings.Add(newBuilding);
+			newBuilding.gameObject.layer = Layer.Buildings.ToIndex();
         }else{
 			PlayerMovement newCharacter = target.GetComponent<PlayerMovement>();
 			if (newCharacter != null){
 				newCharacter.thisCharacterData.team = team;
 				AssignTeamMaterial(target, team.teamMaterial);
 				team.characters.Add(newCharacter);
+				newCharacter.gameObject.layer = Layer.Player.ToIndex();
             }
 		}
 	}

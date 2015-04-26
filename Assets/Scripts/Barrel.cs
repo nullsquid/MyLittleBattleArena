@@ -20,7 +20,7 @@ public class Barrel : MonoBehaviour {
 		}
 		else if(tower.targets.Count == 0){
 			tower.Idle();
-			Debug.Log("idle");
+
 		}
 	}
 
