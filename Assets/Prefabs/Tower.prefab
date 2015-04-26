@@ -90,6 +90,7 @@ MonoBehaviour:
   health: 10
   team: {fileID: 0}
   cooldown: 2
+  projectile: {fileID: 190332, guid: b65cb69e98d104dd1acc273f5abdc957, type: 2}
   range: 2.5
   projectileSpeed: 0
   baseCoolDown: 1
