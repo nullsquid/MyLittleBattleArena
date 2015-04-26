@@ -22,7 +22,7 @@ public class Inputmanager : MonoBehaviour {
 
 	void Start(){
 	
-		Invoke("numberPlayers", 1.0f);
+		Invoke("numberPlayers", 1.2f);
 
 	}
 
@@ -34,8 +34,10 @@ public class Inputmanager : MonoBehaviour {
 	void numberPlayers(){
 		int i = 1;
 	          foreach (GameObject player in playerList){
-			player.SendMessage("SetPlayerNumber",i);
+			print(i);
+			player.SendMessage("SetPlayerNumber",i,SendMessageOptions.DontRequireReceiver);
 			i++;
+
 		}
 	 }
 

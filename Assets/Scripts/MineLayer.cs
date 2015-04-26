@@ -49,7 +49,7 @@ public class MineLayer : MonoBehaviour {
 	void LayMine(){
 		timer = 0f;
 		GameObject mine = Instantiate(minePrefab,transform.position,transform.rotation) as GameObject;
-		mine.GetComponent<MineTimer>().Lifetime = 10.0f;
+		mine.GetComponent<MineTimer>().Lifetime = 1.0f;
 		mine.GetComponent<MineTimer>().teamColor = this.tag;
 	}
 }
