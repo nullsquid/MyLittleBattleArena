@@ -200,6 +200,9 @@ public class MapEditor : MonoBehaviour {
 			if (target.GetComponent<Hub>()){
 				team.teamHub = target.GetComponent<Hub>();
             }
+			if (target.GetComponent<Tower>()){
+				team.towers.Add(target.GetComponent<Tower>());
+			}
 			AssignTeamMaterial(target, team.teamMaterial);
 			if (!team.buildings.Contains(newBuilding)){
 				team.buildings.Add(newBuilding);

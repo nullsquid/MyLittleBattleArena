@@ -4,13 +4,20 @@ public abstract class Building : MonoBehaviour {
 	public float sight;
 	public float health;
 	public PlayerTeam team;
+	public bool canBeDamaged;
+	public bool isDestroyed = false;
 	public void DealDamage(int damage){
-		health -= damage;
-		if(health<=0){
-			IsDestroyed();
+		if(canBeDamaged == true){
+			health -= damage;
+			if(health<=0){
+				IsDestroyed();
+			}
 		}
 	}
 	public void IsDestroyed(){
-		Destroy(this.gameObject);
+		isDestroyed = true;
+		this.gameObject.SetActive(false);
+		//Destroy(this.gameObject);
+
 	}
 }

@@ -7,5 +7,6 @@ public class PlayerTeam : MonoBehaviour {
 	public Material teamMaterial;
 	public List<PlayerMovement> characters = new List<PlayerMovement>();
 	public List<Building> buildings = new List<Building>();
+	public List<Tower> towers = new List<Tower>();
 	public Hub teamHub;
 }
