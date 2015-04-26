@@ -56,13 +56,13 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private bool  canMove = false;
 	public Vector3 spawnPosition;
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
-	private Quaternion startRotation;
+	private  Vector3  startRotation;
 	void Start()
 	{
 
 		Invoke("GetPlayerNumber",0.5f);
 
-		startRotation = this.transform.rotation;
+		transform.eulerAngles = new Vector3(0,0,0);
 		SetClass();
 		walkSpeed = 0.10f;
 		sprintSpeed = walkSpeed + (walkSpeed / 2);
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 				FireWeapon();
 			}
 			// Move 
-			this.transform.rotation = startRotation;
+			transform.eulerAngles = new Vector3(0,0,0);
 			Vector2 rawDirection = new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)); //There are propbably some superflous things here but it works.
 			Vector2 directionNormalized = rawDirection.normalized;
 			transform.Translate(directionNormalized * maxSpeed);
