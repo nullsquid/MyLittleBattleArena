@@ -22,7 +22,7 @@ public class Tower : Building {
 	public float baseCoolDown = 1f;
 	private float coolDown = 1f;
 	void Start () {
-	
+		canBeDamaged = true;
 	}
 	void Update(){
 		//if(canShoot){
