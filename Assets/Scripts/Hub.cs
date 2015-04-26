@@ -6,7 +6,7 @@ public class Hub : Building {
 	PlayerTeam team;
 	string teamColor;
 	List<GameObject> healTargets = new List<GameObject>();
-	public List<GameObject> turrets = new List<GameObject>();
+	public List<Tower> turrets = new List<Tower>();
 	float cooldown;
 	bool canBeDamaged;
 	public float maxCooldown = 2;
@@ -14,9 +14,11 @@ public class Hub : Building {
 	// Use this for initialization
 
 	void Start(){
+
 		for(int i = 0; i <= team.buildings.Count; i++){
 			if(team.buildings[i].GetType() == typeof(Tower)){
-				turrets.Add(team.buildings[i].gameObject);
+				//turrets.Add(team.buildings[i]);
+				Debug.Log(team.buildings[i]);
 			}
 		}
 	}

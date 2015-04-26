@@ -25,6 +25,7 @@ public class Inputmanager : MonoBehaviour {
 	public void AddPlayer(PlayerMovement PlayerReference){//USE LAYERS INSTEAD LATER
 		playerCountInit++;
 		PlayerReference.thisCharacterData.playerNumber = playerCountInit;
+		Debug.Log(playerCountInit);
 	}
 	
 

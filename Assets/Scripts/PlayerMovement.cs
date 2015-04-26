@@ -21,7 +21,7 @@ public enum CharacterClass
 [System.Serializable]
 public class CharacterData {
 	public PlayerTeam team;
-	public int playerNumber;
+	public int playerNumber {get; set;}
 	public int health;
 	public CharacterClass characterClass;
 	//public PlayerColor playerColor;
