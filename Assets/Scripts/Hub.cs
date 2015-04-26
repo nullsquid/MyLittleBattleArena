@@ -15,7 +15,6 @@ public class Hub : Building {
 	
 	}
 	void OnTriggerStay2D(Collider2D other){
-		Debug.Log("yes");
 		cooldown = maxCooldown;
 		if(gameObject.tag == other.gameObject.tag){
 			cooldown -= Time.deltaTime;
