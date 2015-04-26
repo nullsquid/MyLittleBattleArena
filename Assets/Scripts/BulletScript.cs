@@ -22,5 +22,6 @@ public class BulletScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		//TAGS
 		Destroy(gameObject);
+
 	}
 }
