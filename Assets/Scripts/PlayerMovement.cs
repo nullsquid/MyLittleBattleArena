@@ -1,11 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/*
+ * TODO:  Bullet Collisions knock the player out of Whack.  Really badly.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
 
 public enum PlayerNumber{one,two,three,four};
+public enum PlayerColor{red,blue,grey}
 
-
+public enum CharacterClass
+{
+	Sniper,
+	DemoMan,
+	Melee
+}
 
 [System.Serializable]
 public class CharacterData {
@@ -14,12 +28,17 @@ public class CharacterData {
 		public int team;
 		public int playerNumber;
 		public int health;
+		
+
+
+	public CharacterClass characterClass;
 	//player team. red/blue tags.
-	public CharacterData(int t, int p, int h)
+	public CharacterData(int t, int p, int h, CharacterClass c)
 	{
 		team = t;
 		playerNumber = p;
 		health = h;
+		characterClass = c;
 	}
 }
 
@@ -41,10 +60,11 @@ public class PlayerMovement : MonoBehaviour{
 	private float vertInput;
 	private bool fire = false;
 
-	public CharacterData thisCharacterData = new CharacterData(1,1,1);
+	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper);
+
 	void Start()
 	{
-
+		SetClass();
 		if(thisCharacterData.team == 1){
 			this.gameObject.tag = "red";
 		}
@@ -68,7 +88,8 @@ public class PlayerMovement : MonoBehaviour{
 		curSpeed = walkSpeed;
 		maxSpeed = curSpeed;
 		if(fire){
-			BroadcastMessage("Shoot");
+			FireWeapon();
+			//BroadcastMessage("Shoot");
 		}
 		// Move 
 		transform.Translate (new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)));
@@ -121,4 +142,48 @@ public class PlayerMovement : MonoBehaviour{
 
 
 	}
+
+	void SetClass(){
+		//not sure what the point of this was.
+
+		switch(thisCharacterData.characterClass){
+		
+		case CharacterClass.Sniper:
+			print ("Sniper!");
+			break;
+		case CharacterClass.DemoMan:
+			print ("Demo!");
+			break;
+		case CharacterClass.Melee:
+			print ("melee!");
+			break;
+		default:
+			print("defaultclass?");
+				break;
+		}
+	}
+
+	void  FireWeapon(){
+
+		switch(thisCharacterData.characterClass){
+			
+		case CharacterClass.Sniper:
+			//print ("Sniper!");
+			BroadcastMessage("TryToFire");
+			break;
+		case CharacterClass.DemoMan:
+			//print ("Demo!");
+			BroadcastMessage("TryToLayMine");
+			break;
+		case CharacterClass.Melee:
+			print ("melee!");
+			break;
+		default:
+			print("defaultclass?");
+			break;
+		}
+
+
+	}
+
 }

@@ -356,6 +356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunObject: {fileID: 193878}
+  thisCharacterData:
+    team: 1
+    playerNumber: 1
+    health: 1
+    characterClass: 0
 --- !u!120 &12073350
 LineRenderer:
   m_ObjectHideFlags: 1

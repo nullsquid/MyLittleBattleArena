@@ -34,10 +34,7 @@ public class GunShootingScript : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 		
-		if(Input.GetKey(KeyCode.Space) && timer >= timeBetweenBullets && Time.timeScale != 0)
-		{
-			Shoot ();
-		}
+
 		
 		if(timer >= timeBetweenBullets * effectsDisplayTime)
 		{
@@ -51,7 +48,15 @@ public class GunShootingScript : MonoBehaviour
 		gunLine.enabled = false;
 	}
 	
-	
+	void TryToFire(){
+		if( timer >= timeBetweenBullets && Time.timeScale != 0)
+		{
+			Shoot ();
+		}
+		
+
+	}
+
 	void Shoot ()
 	{
 		timer = 0f;
