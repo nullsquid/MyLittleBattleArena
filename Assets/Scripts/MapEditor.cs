@@ -192,23 +192,28 @@ public class MapEditor : MonoBehaviour {
 		}
     }
 	private void AssignTeamPropertiesToObject(Transform target, PlayerTeam team){
-		MeshRenderer[] renderers = target.GetComponentsInChildren<MeshRenderer>();
-		foreach (MeshRenderer r in renderers){
-			r.material = team.teamMaterial;
-		}
 		Building newBuilding = target.GetComponent<Building>();
 		if (newBuilding != null){
 			newBuilding.team = team;
 			if (target.GetComponent<Hub>()){
 				team.teamHub = target.GetComponent<Hub>();
-			}
-		}else{
+            }
+			AssignTeamMaterial(target, team.teamMaterial);
+			Debug.Log(team.teamName.ToString());
+        }else{
 			PlayerMovement newCharacter = target.GetComponent<PlayerMovement>();
 			if (newCharacter != null){
 				newCharacter.thisCharacterData.team = team;
+				AssignTeamMaterial(target, team.teamMaterial);
 			}
 		}
 	}
+	private void AssignTeamMaterial(Transform target, Material mat){
+		MeshRenderer[] renderers = target.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer r in renderers){
+			r.material = mat;
+        }
+    }
 	private void RotateAtPosition(int xPos, int yPos){
 		if (!changedDataThisFrame){
 			if (mapData[xPos, yPos] != null){
@@ -240,14 +245,14 @@ public class MapEditor : MonoBehaviour {
 		}
     }
     private void HandleChangingTile(){
-		float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
-		if(mouseWheel != 0){
-			if (mouseWheel > 0){
-				ChangeTileIndex(true);
-			}else if (mouseWheel < 0){
-				ChangeTileIndex(false);
-			}
-            SetTileCursorMeshToCurrentPrefab();
+		bool nextPressed = Input.GetKeyDown(KeyCode.RightBracket);
+		bool previousPressed = Input.GetKeyDown(KeyCode.RightBracket);
+		if (nextPressed){
+			ChangeTileIndex(true);
+			SetTileCursorMeshToCurrentPrefab();
+        }else if (previousPressed){
+			ChangeTileIndex(false);
+			SetTileCursorMeshToCurrentPrefab();
         }
     }
     private void ChangeTileIndex(bool nextTile){
