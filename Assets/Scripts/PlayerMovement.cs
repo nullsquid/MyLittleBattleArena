@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private float vertInput;
 	private bool fire = false;
 	private bool  canMove = false;
-
+	public Vector3 playerMovement;
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
 	private Quaternion startRotation;
 	void Start()
@@ -226,7 +226,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	
 	IEnumerator Respawn(){
 		
-		this.transform.position = HomeHub.transform.position; //to be sure
+		this.transform.position = playerMovement; //to be sure
 		
 		yield return new WaitForSeconds(1);
 	
