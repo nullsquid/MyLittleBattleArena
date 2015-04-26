@@ -62,11 +62,14 @@ public class PlayerMovement : MonoBehaviour{
 
 	void FixedUpdate()
 	{
+//		print (Input.GetKey(KeyCode.Joystick1Button0));
 		GetInput();
 		//print(Inputmanager.P1_Horizontal);
 		curSpeed = walkSpeed;
 		maxSpeed = curSpeed;
-		
+		if(fire){
+			BroadcastMessage("Shoot");
+		}
 		// Move 
 		transform.Translate (new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)));
 

@@ -15,71 +15,91 @@ public class Inputmanager : MonoBehaviour {
 
 
 
+	void Start(){
 
+		print (Input.GetJoystickNames()[0]);
+	}
 
 	void Update(){
 
 		if(keyboardInput){
 
-			P1_Horizontal = Input.GetAxis ("Horizontal");
-			P1_Vertical = Input.GetAxis("Vertical");
-		
-		//P1_Horizontal = (0-Input.GetKeyDown(KeyCode.A)+Input.GetKeyDown(KeyCode.D));
-		//P1_Vertical = (0-Input.GetKeyDown(KeyCode.A)+Input.GetKeyDown(KeyCode.D));
-		//P1_Horizontal Input.GetKeyDown(KeyCode.A) 
-		
-		P1_Fire = Input.GetKeyDown(KeyCode.Space);
+			P1_Horizontal = Input.GetAxis ("Horizontal1");
+			P1_Vertical = Input.GetAxis("Vertical1");
+			//P1_Fire = Input.GetKey(KeyCode.C);
+			P1_Fire = Input.GetKeyDown(KeyCode.Space);
 
+			P2_Horizontal = Input.GetAxis ("Horizontal2");
+			P2_Vertical = Input.GetAxis("Vertical2");
+
+			P3_Horizontal = Input.GetAxis ("Horizontal3");
+			P3_Vertical = Input.GetAxis("Vertical3");
+
+			P4_Horizontal = Input.GetAxis ("Horizontal4");
+			P4_Vertical = Input.GetAxis("Vertical4");
 		}
 
 
 		if(joystickInput){
 
-		//	Debug.Log(Input.GetJoystickNames()[0] + " ");
-		//	Debug.Log(Input.GetJoystickNames()[1] + " ");
-//			Debug.Log(Input.GetJoystickNames()[2] + " ");
+			//Debug.Log(Input.GetJoystickNames()[0] + " dicks");
+//			Debug.Log(Input.GetJoystickNames()[1] + " ");
+//	Debug.Log(Input.GetJoystickNames()[2] + " ");
 
 
-			P1_Horizontal = Input.GetAxis("Joy1 Axis 6");
-			P1_Vertical = Input.GetAxis("Joy1 Axis 7");
+			P1_Horizontal = Input.GetAxis("DPad_XAxis_1");
+			P1_Vertical = Input.GetAxis("DPad_YAxis_1");
+			P1_Fire = Input.GetButton("A_1");
 
-			P1_Horizontal = Input.GetAxis("Joy2 Axis 6");
-			P1_Vertical = Input.GetAxis("Joy2 Axis 7");
+			P2_Horizontal = Input.GetAxis("DPad_XAxis_2");
+			P2_Vertical = Input.GetAxis("DPad_YAxis_2");
+			P2_Fire = Input.GetButton("A_2");
 
-			P1_Horizontal = Input.GetAxis("Joy3 Axis 6");
-			P1_Vertical = Input.GetAxis("Joy3 Axis 7");
+			P3_Horizontal = Input.GetAxis("DPad_XAxis_3");
+			P3_Vertical = Input.GetAxis("DPad_YAxis_3");
+			P3_Fire = Input.GetButton("A_3");
+		
+			P4_Horizontal = Input.GetAxis("DPad_XAxis_4");
+			P4_Vertical = Input.GetAxis("DPad_YAxis_4");
+			P4_Fire = Input.GetButton("A_4");
 
-			P1_Horizontal = Input.GetAxis("Joy4 Axis 6");
-			P1_Vertical = Input.GetAxis("Joy4 Axis 7");
+//			P2_Horizontal = Input.GetAxis("Joy2 Axis 6");
+//			P2_Vertical = Input.GetAxis("Joy2 Axis 7");
+//
+//			P3_Horizontal = Input.GetAxis("Joy3 Axis 6");
+//			P3_Vertical = Input.GetAxis("Joy3 Axis 7");
+//
+//			P4_Horizontal = Input.GetAxis("Joy4 Axis 6");
+//			P4_Vertical = Input.GetAxis("Joy4 Axis 7");
 
-			 if(Input.GetAxis("Joy1 Axis 3") !=0){
-				P1_Fire = true;
-			}
-			else {
-				P1_Fire = false;
-			}
+//			 if(Input.GetButton("A_1") !=0){
+//				P1_Fire = true;
+//			}
+//			else {
+//				P1_Fire = false;
+//			}
 
-
-			if(Input.GetAxis("Joy2 Axis 3") !=0){
-				P2_Fire = true;
-			}
-			else {
-				P2_Fire = false;
-			} 
-
-			if(Input.GetAxis("Joy3 Axis 3") !=0){
-				P3_Fire = true;
-			}
-			else {
-				P3_Fire = false;
-			} 
-
-			if(Input.GetAxis("Joy4 Axis 3") !=0){
-				P4_Fire = true;
-			}
-			else {
-				P4_Fire = false;
-			}
+//
+//			if(Input.GetAxis("Joy2 Axis 3") !=0){
+//				P2_Fire = true;
+//			}
+//			else {
+//				P2_Fire = false;
+//			} 
+//
+//			if(Input.GetAxis("Joy3 Axis 3") !=0){
+//				P3_Fire = true;
+//			}
+//			else {
+//				P3_Fire = false;
+//			} 
+//
+//			if(Input.GetAxis("Joy4 Axis 3") !=0){
+//				P4_Fire = true;
+//			}
+//			else {
+//				P4_Fire = false;
+//			}
 
 			//P2_Fire = Input.GetAxis("Joy2 Axis 3");
 			//P3_Fire = Input.GetAxis("Joy3 Axis 3");
