@@ -15,16 +15,23 @@ public class Tower : Building {
 	GameObject projectile;
 	Dictionary<Vector2,Transform> activeBullets = new Dictionary<Vector2,Transform>();
 	Collider2D[] inRange;
-	float projectileSpeed;
 	public float range = 2.5f;
+	public float projectileSpeed = 2.5f;
 	float rotateSpeed;
 	//Vector2 relativePos;
+	public float baseCoolDown = 1f;
+	private float coolDown = 1f;
+	public bool canShoot = true;
 	public List<GameObject> targets = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 	
 	}
-	
+	void Update(){
+		if(canShoot){
+			coolDown -= Time.deltaTime;
+		}
+	}
 	// Update is called once per frame
 	void FixedUpdate () {
 
@@ -32,16 +39,17 @@ public class Tower : Building {
 		if(targets==null){
 
 		}
-
-
-		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToMask());
-		if(inRange != null && inRange.Length > 0){
-			for(int i = 0; i < inRange.Length; i++){
-				if (inRange[i] != null){
-					RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range);
-					if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
-						GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-						activeBullets.Add((Vector2)hit.transform.position, bullet.transform);
+		if(coolDown <= 0 && canShoot){
+			coolDown = baseCoolDown;
+			inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToMask());
+			if(inRange != null && inRange.Length > 0){
+				for(int i = 0; i < inRange.Length; i++){
+					if (inRange[i] != null){
+						RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range);
+						if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
+							GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+							activeBullets.Add((Vector2)hit.transform.position, bullet.transform);
+						}
 					}
 				}
 			}
