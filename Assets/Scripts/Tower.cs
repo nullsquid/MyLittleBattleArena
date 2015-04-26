@@ -33,21 +33,24 @@ public class Tower : Building {
 		}
 
 
-		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToIndex());
-		if(inRange.Length >0){
+		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range);
+		/*if(inRange.Length > 0){
 		for(int i = 0; i<=inRange.Length;i++){
-			Debug.Log(inRange[i].gameObject.GetComponent<PlayerTeam>().teamName);
+				Debug.Log(inRange[i].gameObject.GetComponent<PlayerTeam>().teamName);
+			
 
-		}
-		}
+			}
+		}*/
 		
 		//Debug.Log(inRange.Length);
 		//if(inRange.
 		//Debug.Log(inRange[2]);
 
 	}
-	/*void OnTriggerEnter2D(Collider2D other){
-
+	void OnTriggerStay2D(Collider2D other){
+		if(other.gameObject.GetComponent<PlayerTeam>().teamName == this.gameObject.GetComponent<PlayerTeam>().teamName){
+			targets.Add(other.gameObject);
+		}
 		//if(other.gameObject.team != gameObject.team){
 		//if(other.gameObject == team.gameObject){
 			
@@ -56,7 +59,7 @@ public class Tower : Building {
 
 
 		//}
-	}*/
+	}
 	/*void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject == targets[0]){
 			targets.RemoveAt(0);
