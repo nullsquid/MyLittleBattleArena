@@ -41,7 +41,7 @@ public class BulletScript : MonoBehaviour {
 		coll.gameObject.SendMessage("DealDamage", 1);
 
 		//print (coll.transform.name);
-		if(coll.transform.tag == this.tag && coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types
+		if( coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types
 			coll.gameObject.BroadcastMessage("EXPLODE");
 		}
 		Destroy(gameObject);
@@ -51,13 +51,12 @@ public class BulletScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {  //trigger instead?
 		//TAGS
 		//print (col.transform.name);
-		print (col.transform.tag);
-		if(col.transform.tag == this.tag){  //Use something better than name, get object types
+		  //Use something better than name, get object types
 			col.gameObject.BroadcastMessage("EXPLODE",SendMessageOptions.DontRequireReceiver);
 			print ("HITTTT")	;
 			Destroy(gameObject);
 
-		}
+
 
 	}
 	

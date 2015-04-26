@@ -37,7 +37,11 @@ public class CharacterData {
 		playerColor = s;
 	}
 }
-public class PlayerMovement : MonoBehaviour{
+
+
+public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
+
+
 	//make this more dynamic
 	public GameObject HomeHub;
 	// Normal Movements Variables
@@ -49,11 +53,14 @@ public class PlayerMovement : MonoBehaviour{
 	private float horzInput;
 	private float vertInput;
 	private bool fire = false;
-	
+
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
-	
 	private Quaternion startRotation;
-	void Start(){
+	void Start()
+	{
+
+		Invoke("GetPlayerNumber",1);
+
 		startRotation = this.transform.rotation;
 		SetClass();
 		walkSpeed = 0.10f;
@@ -64,6 +71,24 @@ public class PlayerMovement : MonoBehaviour{
 	public void DealDamage(int damage){
 		thisCharacterData.health -= damage;
 	}
+
+
+	void GetPlayerNumber(){
+		print ("GettingNumber");
+		//Send a messsage up to the heavens, then take a number
+		GameObject theInputManager =	GameObject.Find("InputManagerObject");
+
+		theInputManager.SendMessage("AddPlayer",this.gameObject);;
+
+
+	}
+
+	void SetPlayerNumber(int myNum){
+		//Send a messsage up to the heavens, then take a number
+		thisCharacterData.playerNumber = myNum;
+	}
+
+
 	void FixedUpdate()
 	{
 		

@@ -18,7 +18,6 @@ public class MineTimer : MonoBehaviour {
 		Invoke ("RedAlert", Lifetime - Lifetime/10.0f);//this is a terrible way to do effects
 		InvokeRepeating("MinePing", 1,1);
 		this.tag = teamColor;
-		ColorManager.setColorByTag(this.tag,this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -48,14 +47,17 @@ public class MineTimer : MonoBehaviour {
 	}
 
 	//When hit by a bullet:
-	void EXPLODE(){
-//		print ("BOOM");
 
 
+	void EXPLODE(float newerPitch){
 		GameObject mineExplosion = Instantiate(mineExplosionPrefab,transform.position, Quaternion.identity) as GameObject;
-		mineExplosion.GetComponent<MineExplosion>().teamColor = this.tag;
-			//pass color, radius, and speed out, and speed in.
+		//mineExplosion.GetComponent<MineExplosion>().teamColor = this.tag;
+		print (newerPitch.ToString() +" PitchUp?");
+		mineExplosion.GetComponent<MineExplosion>().newPitch = newerPitch + 4.0f;
+		//pass color, radius, and speed out, and speed in.
 		Destroy(gameObject);
-
+}
+	void EXPLODE(){
+		EXPLODE(0.0f);
 	}
 }
