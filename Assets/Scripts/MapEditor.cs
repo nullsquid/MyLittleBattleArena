@@ -8,9 +8,6 @@ public class MapEditor : MonoBehaviour {
 	[SerializeField] private Transform backgroundGeometry;
 	[SerializeField] private Transform root, mirrorRoot;
 	[SerializeField] private GameObject[] levelTiles;
-	[SerializeField] private Material defaultMaterial;
-	[SerializeField] private Material blueTeamMaterial;
-	[SerializeField] private Material redTeamMaterial;
     public bool inEditMode = true;
 	private int currentTileIndex;
 	private const float zDistance = 0f;
@@ -183,34 +180,30 @@ public class MapEditor : MonoBehaviour {
 	}
 	private void RecolorBuildings(){
 		foreach (Transform t in root){
-			if (t.GetComponent<Building>() != null){
-				MeshRenderer renderer = t.GetComponent<MeshRenderer>();
-				if (renderer != null){
-					renderer.material = blueTeamMaterial;
-				}
-				foreach (Transform r in t){
-					renderer = r.GetComponent<MeshRenderer>();
-					if (renderer != null){
-						renderer.material = blueTeamMaterial;
-                    }
-                }
-            }
+			AssignTeamPropertiesToObject(t, PlayerTeamManager.instance.blueTeam);
         }
         foreach (Transform t in mirrorRoot){
-			if (t.GetComponent<Building>() != null){
-				MeshRenderer renderer = t.GetComponent<MeshRenderer>();
-				if (renderer != null){
-					renderer.material = redTeamMaterial;
-                }
-				foreach (Transform r in t){
-					renderer = r.GetComponent<MeshRenderer>();
-					if (renderer != null){
-						renderer.material = redTeamMaterial;
-                    }
-                }
-            }
+			AssignTeamPropertiesToObject(t, PlayerTeamManager.instance.redTeam);
 		}
     }
+	private void AssignTeamPropertiesToObject(Transform target, PlayerTeam team){
+		MeshRenderer[] renderers = target.GetComponentsInChildren<MeshRenderer>();
+		foreach (MeshRenderer r in renderers){
+			r.material = team.teamMaterial;
+		}
+		Building newBuilding = target.GetComponent<Building>();
+		if (newBuilding != null){
+			newBuilding.team = team;
+			if (target.GetComponent<Hub>()){
+				team.teamHub = target.GetComponent<Hub>();
+			}
+		}else{
+			PlayerMovement newCharacter = target.GetComponent<PlayerMovement>();
+			if (newCharacter != null){
+				newCharacter.thisCharacterData.team = team;
+			}
+		}
+	}
 	private void RotateAtPosition(int xPos, int yPos){
 		if (!changedDataThisFrame){
 			if (mapData[xPos, yPos] != null){
