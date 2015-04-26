@@ -13,7 +13,6 @@ public class MineLayer : MonoBehaviour {
 	float timer;
 
 	AudioSource MineAudio;
-	float effectsDisplayTime = 0.2f;
 
 	public string teamColor;
 	// Use this for initialization

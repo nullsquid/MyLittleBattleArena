@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour{
 
 
 
+	//make this more dynamic
+	GameObject HomeHub;
 
 
 	// Normal Movements Variables
@@ -82,18 +84,26 @@ public class PlayerMovement : MonoBehaviour{
 
 	void FixedUpdate()
 	{
-//		print (Input.GetKey(KeyCode.Joystick1Button0));
-		GetInput();
-		//print(Inputmanager.P1_Horizontal);
-		curSpeed = walkSpeed;
+
+		if(thisCharacterData.health <=0){
+			DIE();
+		}
+		else{
+
+		curSpeed = walkSpeed; 
 		maxSpeed = curSpeed;
+
+		GetInput();
+
+
 		if(fire){
 			FireWeapon();
-			//BroadcastMessage("Shoot");
 		}
 		// Move 
-		transform.Translate (new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)));
 
+		Vector2 rawDirection = new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)); //There are propbably some superflous things here but it works.
+		Vector2 directionNormalized = rawDirection.normalized;
+		transform.Translate(directionNormalized * maxSpeed);
 
 		float rotateSpeed = 9999.0f;
 		//Vector3 moveDirection = gameObject.transform.position; 
@@ -105,7 +115,8 @@ public class PlayerMovement : MonoBehaviour{
 		//print (angle.ToString());
 
 		GunObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotateSpeed * Time.deltaTime); 
-		}
+			}
+		}//alive
 	
  }
 	void GetInput(){
@@ -184,6 +195,17 @@ public class PlayerMovement : MonoBehaviour{
 		}
 
 
+	}
+
+	void DIE(){
+		//stick in purgatory
+		this.transform.position = HomeHub.transform.position;
+		//hide or blink graphics
+	}
+
+	void Respawn(){
+		this.transform.position = HomeHub.transform.position;
+		this.thisCharacterData.health = 1;
 	}
 
 }

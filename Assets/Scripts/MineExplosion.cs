@@ -12,6 +12,8 @@ public class MineExplosion : MonoBehaviour {
 	void Start () {
 		Invoke ("Fizzle", lifetime);
 		maxRadiusVec = new Vector3(maxRadius, maxRadius, maxRadius);  //no comment
+		//Should starttime be time.time?
+		startTime = Time.time;
 	}
 	
 	void Update () {
@@ -22,9 +24,13 @@ public class MineExplosion : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {  //Mine explosions must collide with other mine explosions 	//Maybe Use Physics2D.OverlapCircleAll
-
-		//Rocks fall, everyone dies
+		if(other.gameObject.GetComponent<MineTimer>() !=  null){
+		other.gameObject.BroadcastMessage("EXPLODE");
+		print ("BoomAgain!");
+		}
 	}
+
+	//Maybe do damage based on a timer.
 
 	void Fizzle(){
 		Destroy(gameObject);

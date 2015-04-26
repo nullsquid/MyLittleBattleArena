@@ -32,9 +32,9 @@ public class BulletScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {  //trigger instead?
 		//TAGS
-		print (coll.transform.name);
-		if(coll.transform.tag == color && coll.transform.name == "MinePrefab_a"){  //Use something better than name, get object types
-			coll.gameObject.SendMessage("EXPLODE");
+		//print (coll.transform.name);
+		if(coll.transform.tag == color && coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types
+			coll.gameObject.BroadcastMessage("EXPLODE");
 		}
 		Destroy(gameObject);
 
