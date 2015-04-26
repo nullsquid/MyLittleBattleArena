@@ -13,6 +13,7 @@ public class Tower : Building {
 	float distanceToTarget;
 	GameObject target;
 	GameObject projectile;
+	Dictionary<Vector2,Transform> activeBullets = new Dictionary<Vector2,Transform>();
 	Collider2D[] inRange;
 	float projectileSpeed;
 	public float range = 2.5f;
@@ -33,21 +34,36 @@ public class Tower : Building {
 		}
 
 
-		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range);
-		/*if(inRange.Length > 0){
-		for(int i = 0; i<=inRange.Length;i++){
-				Debug.Log(inRange[i].gameObject.GetComponent<PlayerTeam>().teamName);
-			
-
+		inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToMask());
+		if(inRange != null && inRange.Length > 0){
+			for(int i = 0; i < inRange.Length; i++){
+				if (inRange[i] != null){
+					RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range);
+					if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
+						GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+						activeBullets.Add((Vector2)hit.transform.position, bullet.transform);
+					}
+				}
 			}
-		}*/
+		}
+		if (activeBullets.Count > 0){
+			foreach (KeyValuePair<Vector2, Transform> kvp in activeBullets){
+				if (Vector2.Distance(kvp.Value.position, kvp.Key) < 0.1f){
+					activeBullets.Remove(kvp.Key);
+					Destroy(kvp.Value);
+					break;
+				}else{
+					kvp.Value.position = Vector3.MoveTowards(kvp.Value.position, kvp.Key, Time.deltaTime);
+				}
+			}
+		}
 		
 		//Debug.Log(inRange.Length);
 		//if(inRange.
 		//Debug.Log(inRange[2]);
 
 	}
-	void OnTriggerStay2D(Collider2D other){
+	/*void OnTriggerStay2D(Collider2D other){
 		if(other.gameObject.GetComponent<PlayerTeam>().teamName == this.gameObject.GetComponent<PlayerTeam>().teamName){
 			targets.Add(other.gameObject);
 		}
@@ -59,7 +75,7 @@ public class Tower : Building {
 
 
 		//}
-	}
+	}*/
 	/*void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject == targets[0]){
 			targets.RemoveAt(0);
@@ -97,10 +113,6 @@ public class Tower : Building {
 			//Quaternion.LookRotation(relativePos);
 			//Shoot (targets[0]);
 		//}
-
-	}
-
-	void Shoot(GameObject target){
 
 	}
 

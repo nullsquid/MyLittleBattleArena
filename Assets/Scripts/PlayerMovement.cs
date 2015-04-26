@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private float horzInput;
 	private float vertInput;
 	private bool fire = false;
-
+	public Vector3 spawnPosition;
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
 	private Quaternion startRotation;
 	void Start()
@@ -74,11 +74,11 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 
 
 	void GetPlayerNumber(){
-		print ("GettingNumber");
+		//print ("GettingNumber");
 		//Send a messsage up to the heavens, then take a number
 		GameObject theInputManager =	GameObject.Find("InputManagerObject");
 
-		theInputManager.SendMessage("AddPlayer",this.gameObject);;
+		//theInputManager.SendMessage("AddPlayer",this.gameObject);;
 
 
 	}
@@ -222,7 +222,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	
 	IEnumerator Respawn(){
 		
-		this.transform.position = HomeHub.transform.position; //to be sure
+		this.transform.position = spawnPosition; //to be sure
 		
 		yield return new WaitForSeconds(1);
 		
