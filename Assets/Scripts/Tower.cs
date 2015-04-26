@@ -48,6 +48,7 @@ public class Tower : Building {
 
 	}
 	void OnTriggerStay2D(Collider2D other){
+
 		if(other.gameObject.GetComponent<PlayerTeam>().teamName == this.gameObject.GetComponent<PlayerTeam>().teamName){
 			targets.Add(other.gameObject);
 		}
