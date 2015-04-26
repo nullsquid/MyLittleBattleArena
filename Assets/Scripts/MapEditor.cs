@@ -23,6 +23,7 @@ public class MapEditor : MonoBehaviour {
 		LoadMap();
 	}
 	private void ResizeMap () {
+		backgroundPlane.enabled = (inEditMode);
 		foreach (Transform t in root){
 			Destroy(t.gameObject);
 		}
@@ -117,7 +118,7 @@ public class MapEditor : MonoBehaviour {
 			tileBrushTr.gameObject.SetActive(inEditMode);
 		}
 		if (changedDataThisFrame){
-			RecolorBuildings();
+			AssignProperties();
 			changedDataThisFrame = false;
 		}
     }
@@ -184,7 +185,7 @@ public class MapEditor : MonoBehaviour {
         }
 		return newMapTile;
 	}
-	private void RecolorBuildings(){
+	private void AssignProperties(){
 		foreach (Transform t in root){
 			AssignTeamPropertiesToObject(t, PlayerTeamManager.instance.blueTeam);
         }
@@ -200,15 +201,22 @@ public class MapEditor : MonoBehaviour {
 				team.teamHub = target.GetComponent<Hub>();
             }
 			AssignTeamMaterial(target, team.teamMaterial);
-			team.buildings.Add(newBuilding);
+			if (!team.buildings.Contains(newBuilding)){
+				team.buildings.Add(newBuilding);
+			}
 			newBuilding.gameObject.layer = Layer.Buildings.ToIndex();
         }else{
 			PlayerMovement newCharacter = target.GetComponent<PlayerMovement>();
 			if (newCharacter != null){
 				newCharacter.thisCharacterData.team = team;
 				AssignTeamMaterial(target, team.teamMaterial);
-				team.characters.Add(newCharacter);
+				if (!team.characters.Contains(newCharacter)){
+					team.characters.Add(newCharacter);
+				}
 				newCharacter.gameObject.layer = Layer.Player.ToIndex();
+				newCharacter.transform.SetParent(root);
+				newCharacter.transform.localScale = Vector3.one;
+				newCharacter.spawnPosition = newCharacter.transform.position;
             }
 		}
 	}

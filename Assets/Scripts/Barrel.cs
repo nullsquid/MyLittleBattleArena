@@ -35,11 +35,5 @@ public class Barrel : MonoBehaviour {
 		//transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		//shouldFire = true;
 		//Shoot ();
-
-	void Shoot(){
-		
-		GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-		bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * speed);
-
-	}
+	
 }

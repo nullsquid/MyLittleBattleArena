@@ -14,16 +14,6 @@ public class Hub : Building {
 	void Update () {
 	
 	}
-	void OnTriggerStay2D(Collider2D other){
-		cooldown = maxCooldown;
-		if(gameObject.tag == other.gameObject.tag){
-			cooldown -= Time.deltaTime;
-			if(cooldown <= 0){
-				Heal (other.gameObject);
-				cooldown = maxCooldown;
-			}
-		}
-	}
 
 	void Heal(GameObject target){
 		target.SendMessage("GetWell", healStep);

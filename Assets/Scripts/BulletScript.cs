@@ -54,6 +54,7 @@ public class BulletScript : MonoBehaviour {
 		  //Use something better than name, get object types
 			col.gameObject.BroadcastMessage("EXPLODE",SendMessageOptions.DontRequireReceiver);
 			print ("HITTTT")	;
+			Debug.Log(col);
 			Destroy(gameObject);
 
 
