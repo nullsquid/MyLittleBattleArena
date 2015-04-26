@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private float vertInput;
 	private bool fire = false;
 
-	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper,PlayerColor.red);
+	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
 	private Quaternion startRotation;
 	void Start()
 	{
