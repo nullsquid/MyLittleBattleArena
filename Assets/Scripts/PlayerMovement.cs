@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 
 
 	//make this more dynamic
+
 	public GameObject HomeHub;
 	// Normal Movements Variables
 	private float walkSpeed;
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private Quaternion startRotation;
 	void Start()
 	{
-
+		spawnPosition = transform.position;
 		Invoke("GetPlayerNumber",0.8f);
 
 		startRotation = this.transform.rotation;
@@ -218,8 +219,9 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 		//stick in purgator
 		hasDied = true;
 		print (this.name+ " is DEAD");
-		this.transform.position = HomeHub.transform.position;
-		
+		this.transform.position = spawnPosition;
+		//this.transform.position = team.teamHub.transform.position;
+
 		StartCoroutine (Respawn());
 		//hide or blink graphics
 	}
