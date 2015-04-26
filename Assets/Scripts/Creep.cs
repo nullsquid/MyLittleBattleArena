@@ -29,11 +29,11 @@ public class Creep : MonoBehaviour {
 		transform.Translate(Vector2.up * Time.deltaTime*speed);
 		//agent.SetDestination(target.position);
 	}
-	void OnCollisionEnter2D(Collider2D other){
+	void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.tag != this.gameObject.tag){
-			other.SendMessage("DealDamage", 1);
-			Destroy(this.gameObject);
-			Debug.Log("damage");
+			//other.SendMessage("DealDamage", 1);
+			//Destroy(this.gameObject);
+			//Debug.Log("damage");
 		}
 	}
 }
