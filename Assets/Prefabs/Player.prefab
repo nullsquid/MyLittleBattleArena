@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11497364}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Targetable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00400000019, y: .709999979, z: -0}
+  m_LocalPosition: {x: -.00400000019, y: 1.37100005, z: 0}
   m_LocalScale: {x: .487639308, y: .487639308, z: .487639308}
   m_Children: []
   m_Father: {fileID: 437964}
@@ -228,9 +228,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -246,7 +246,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: .5
 --- !u!64 &6431718
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -255,7 +255,7 @@ MeshCollider:
   m_GameObject: {fileID: 119534}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300022, guid: 4fd768b4173934e8f80c3ceacc67fb6c, type: 3}
@@ -269,7 +269,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   timeBetweenBullets: .150000006
   range: 100
   bulletPrefab: {fileID: 190332, guid: a08c443f67647485397a9630cc92d5e1, type: 2}
-  bulletSpeed: 100
+  bulletSpeed: 1000
 --- !u!114 &11497364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,7 +1419,7 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     type: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}

@@ -10,7 +10,7 @@ public abstract class Building : MonoBehaviour {
 	public float health;
 	//colliders?
 	//UI elements?
-	public void IsDamaged(int damage){
+	public void DealDamage(int damage){
 		health -= damage;
 		if(health<=0){
 			IsDestroyed();

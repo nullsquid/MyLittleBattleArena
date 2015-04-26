@@ -18,7 +18,7 @@ TagManager:
   - Level
   - Buildings
   - Projectiles
-  - 
+  - IgnoreCollision
   - 
   - 
   - 

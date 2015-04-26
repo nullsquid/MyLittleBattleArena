@@ -14,6 +14,9 @@ public class BulletScript : MonoBehaviour {
 	void Update () {
 	
 	}
+	void FixedUpdate(){
+		//Physics.IgnoreLayerCollision(12, 11);
+	}
 
 	void Fizzle(){
 		Destroy(gameObject);
@@ -21,6 +24,13 @@ public class BulletScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		//TAGS
+
 		Destroy(gameObject);
+
 	}
+	/*void OnTriggerEnter2D(Collider2D other){
+
+		SendMessage("DealDamage", 1);
+		Destroy(gameObject);
+	}*/
 }
