@@ -6,7 +6,6 @@ TagManager:
   tags:
   - red
   - blue
-  - grey
   layers:
   - Default
   - TransparentFX
@@ -16,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Level
-  - Buildings
-  - Projectiles
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

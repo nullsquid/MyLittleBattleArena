@@ -13,15 +13,17 @@ public class MineTimer : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		Invoke ("Fizzle", Lifetime);
 		Invoke ("RedAlert", Lifetime - Lifetime/10.0f);//this is a terrible way to do effects
 		InvokeRepeating("MinePing", 1,1);
+		this.tag = teamColor;
+		ColorManager.setColorByTag(this.tag,this.gameObject);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//tick tock bleep bloop
+
 	}
 
 	void RedAlert(){
@@ -36,7 +38,8 @@ public class MineTimer : MonoBehaviour {
 	}
 
 	void Fizzle(){
-		Destroy(gameObject);
+		EXPLODE();
+		//Destroy(gameObject);
 	}
 	
 	void OnCollisionEnter2D(Collision2D coll) {
@@ -46,10 +49,11 @@ public class MineTimer : MonoBehaviour {
 
 	//When hit by a bullet:
 	void EXPLODE(){
-		print ("BOOM");
+//		print ("BOOM");
 
 
 		GameObject mineExplosion = Instantiate(mineExplosionPrefab,transform.position, Quaternion.identity) as GameObject;
+		mineExplosion.GetComponent<MineExplosion>().teamColor = this.tag;
 			//pass color, radius, and speed out, and speed in.
 		Destroy(gameObject);
 

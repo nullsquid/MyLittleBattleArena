@@ -14,7 +14,7 @@ GameObject:
   - 58: {fileID: 5890592}
   - 114: {fileID: 11406268}
   - 96: {fileID: 9610148}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BulletBill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,8 +116,8 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
-  m_StartWidth: .100000001
+  m_Time: 2
+  m_StartWidth: .00999999978
   m_EndWidth: .100000001
   m_Colors:
     m_Color[0]:
@@ -136,7 +136,7 @@ TrailRenderer:
       serializedVersion: 2
       rgba: 16777215
   m_MinVertexDistance: .100000001
-  m_Autodestruct: 0
+  m_Autodestruct: 1
 --- !u!114 &11406268
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,7 +23,7 @@ public class GunShootingScript : MonoBehaviour
 	
 	void Awake ()
 	{
-		shootableMask = LayerMask.GetMask ("Shootable");
+		shootableMask = LayerMask.GetMask ("Shootable");//Probably not using this?
 		gunParticles = GetComponent<ParticleSystem> ();
 		gunLine = GetComponent <LineRenderer> ();
 		gunAudio = GetComponent<AudioSource> ();
@@ -54,6 +54,11 @@ public class GunShootingScript : MonoBehaviour
 			Shoot ();
 		}
 		
+
+	}
+
+	void SetTag(string teamColor){
+		this.tag = teamColor;
 
 	}
 
@@ -94,6 +99,7 @@ public class GunShootingScript : MonoBehaviour
 		
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
 		bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
+		bullet.tag = this.tag;
 		
 		
 	}
