@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void Start()
 	{
 
-		Invoke("GetPlayerNumber",0.8f);
+		Invoke("GetPlayerNumber",0.5f);
 
 		startRotation = this.transform.rotation;
 		SetClass();
@@ -75,19 +75,18 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 
 
 	void GetPlayerNumber(){
-		print ("GettingNumber");
+		//print ("GettingNumber");
 		//Send a messsage up to the heavens, then take a number
 		GameObject theInputManager = GameObject.Find("InputManagerObject");
 
 		theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
-
 
 	}
 
 	void SetPlayerNumber(int myNum){
 		//Send a messsage up to the heavens, then take a number
 		thisCharacterData.playerNumber = myNum;
-		print ("NumberGot"+ myNum.ToString());
+	//	print ("NumberGot"+ myNum.ToString());
 		canMove = true;
 	}
 
@@ -181,7 +180,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			print ("melee!");
 			break;
 		default:
-			print("defaultclass?");
+		//	print("defaultclass?");
 			break;
 		}
 	}
@@ -199,7 +198,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			BroadcastMessage("TryToLayMine");
 			break;
 		case CharacterClass.Melee:
-			print ("melee!");
+		//	print ("melee!");
 			break;
 		default:
 			print("defaultclass?");
@@ -217,8 +216,8 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 		
 		//stick in purgator
 		hasDied = true;
-		print (this.name+ " is DEAD");
-		this.transform.position = HomeHub.transform.position;
+		//print (this.name+ " is DEAD");
+		//this.transform.position = HomeHub.transform.position;
 		
 		StartCoroutine (Respawn());
 		//hide or blink graphics
@@ -226,12 +225,10 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	
 	IEnumerator Respawn(){
 		
-		this.transform.position = spawnPosition; //to be sure
+		//this.transform.position = spawnPosition; //to be sure
 		
 		yield return new WaitForSeconds(1);
-	
 		hasDied = false;
-		
 		this.thisCharacterData.health = 1;
 	}
 	

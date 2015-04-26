@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lifetime: 20
   teamColor: grey
-  mineExplosionPrefab: {fileID: 138728, guid: 88d1608471b1144d991b247091e63db5, type: 2}
+  mineExplosionPrefab: {fileID: 130622, guid: 8918fd264eb794b39a3d46438cba917d, type: 2}
   pingSound: {fileID: 0}
   pingAnimationPrefab: {fileID: 142572, guid: 40f76e8b44f0b480cbf0ea0417f328a6, type: 2}
 --- !u!1001 &100100000
