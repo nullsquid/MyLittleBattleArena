@@ -14,16 +14,19 @@ public class BulletScript : MonoBehaviour {
 
 
 	public float Lifetime;
+	public PlayerTeam team;
+	private float birthTime;
 	private string color = "grey";//this was messing shit up for some reason, so now i'm sticking to tags
 	// Use this for initialization
 	void Awake () {
-		Invoke ("Fizzle", Lifetime);
-
+		birthTime = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Time.time > birthTime + Lifetime){
+			Fizzle();
+		}
 	}
 	void FixedUpdate(){
 		//Physics.IgnoreLayerCollision(12, 11);

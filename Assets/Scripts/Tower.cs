@@ -16,6 +16,7 @@ public class Tower : Building {
 	Collider2D[] inRange;
 	public float range = 2.5f;
 	public float projectileSpeed = 2.5f;
+	public float projectileLifetime = 1.5f;
 	float rotateSpeed;
 	//Vector2 relativePos;
 	public float baseCoolDown = 1f;
@@ -38,6 +39,10 @@ public class Tower : Building {
 							RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range, ~Layer.Buildings.ToMask());
 							if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
 								GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+								BulletScript bulletScr = bullet.GetComponent<BulletScript>();
+								if (bulletScr != null){
+									bulletScr.Lifetime = projectileLifetime;
+								}
 								Rigidbody2D bulletRigid = bullet.GetComponent<Rigidbody2D>();
 								if (bulletRigid != null){
 									bulletRigid.AddForce ((hit.transform.position - transform.position) * 100);
