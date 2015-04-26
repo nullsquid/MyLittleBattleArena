@@ -137,38 +137,6 @@ public class PlayerMovement : MonoBehaviour{
 		
 	}
 	
-	void SetColor(Material newMaterial){
-		//really not sure if this is the best way.
-		GameObject playerGraphic = transform.Find("RotationCorrection/Player Graphics").gameObject as GameObject;
-		
-		switch(thisCharacterData.playerColor){
-			
-		case PlayerColor.red:
-			this.gameObject.tag = "red";
-			//			print (this.transform.childCount.ToString()+" ");
-			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.RedMaterial;
-			break;
-			
-		case PlayerColor.blue:
-			this.gameObject.tag = "blue";
-			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
-			
-			//this.transform.Find("RotationCorrection/Player Graphics").GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
-			
-			break;
-			
-		case PlayerColor.grey:
-			this.gameObject.tag = "grey";
-			break;
-			
-		default :
-			this.gameObject.tag = "grey";//not sure if this makes a good default
-			break;
-		}
-		
-		this.BroadcastMessage("SetTag", this.gameObject.tag);
-	}
-	
 	void SetClass(){
 		//not sure what the point of this was.
 		

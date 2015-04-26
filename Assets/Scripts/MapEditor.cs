@@ -152,14 +152,19 @@ public class MapEditor : MonoBehaviour {
 	}
 	private void CreateAtPosition(int xPos, int yPos, Quaternion targetRotation){
 		MapTile originalTile = CreateAtPosition(xPos, yPos, root, targetRotation);
-		Vector2 mirrorPosition = mirrorRoot.TransformPoint(originalTile.transform.localPosition);
 		//Debug.Log(mirrorPosition + " " + originalTile.transform.localPosition);
-		MapTile mirrorTile = CreateAtPosition(Mathf.RoundToInt(mirrorPosition.x), Mathf.RoundToInt(mirrorPosition.y), mirrorRoot, originalTile.transform.localRotation);
-		originalTile.mirrorEquivalent = mirrorTile;
-		mirrorTile.mirrorEquivalent = originalTile;
-		mirrorTile.isTheMirrorVersion = true;
+		if (originalTile != null){
+			Vector2 mirrorPosition = mirrorRoot.TransformPoint(originalTile.transform.localPosition);
+			MapTile mirrorTile = CreateAtPosition(Mathf.RoundToInt(mirrorPosition.x), Mathf.RoundToInt(mirrorPosition.y), mirrorRoot, originalTile.transform.localRotation);
+			originalTile.mirrorEquivalent = mirrorTile;
+			mirrorTile.mirrorEquivalent = originalTile;
+			mirrorTile.isTheMirrorVersion = true;
+	}
 	}
 	private MapTile CreateAtPosition(int xPos, int yPos, Transform targetRoot, Quaternion targetRotation){
+		if (currentTileIndex >= levelTiles.Length){
+			return null;
+		}
 		MapTile newMapTile = null;
 		GameObject newTileGo = Instantiate(levelTiles[currentTileIndex]) as GameObject;
 		Transform newTileTr = newTileGo.transform;
