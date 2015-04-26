@@ -8962,11 +8962,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11426168, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
       propertyPath: keyboardInput
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11426168, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
       propertyPath: joystickInput
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}

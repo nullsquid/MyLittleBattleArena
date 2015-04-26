@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void Start()
 	{
 
-		Invoke("GetPlayerNumber",1);
+		Invoke("GetPlayerNumber",0.8f);
 
 		startRotation = this.transform.rotation;
 		SetClass();
@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void SetPlayerNumber(int myNum){
 		//Send a messsage up to the heavens, then take a number
 		thisCharacterData.playerNumber = myNum;
+		print ("NumberGot"+ myNum.ToString());
 		canMove = true;
 	}
 
