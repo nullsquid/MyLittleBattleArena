@@ -6,7 +6,8 @@ public class MapEditor : MonoBehaviour {
 	[SerializeField] private int mapID;
 	[SerializeField] private BoxCollider2D backgroundPlane;
 	[SerializeField] private Transform backgroundGeometry;
-	[SerializeField] private Transform root, mirrorRoot;
+	[SerializeField] private Transform root;
+	[SerializeField] private Transform mirrorRoot;
 	[SerializeField] private GameObject[] levelTiles;
     public bool inEditMode = true;
 	private int currentTileIndex;
@@ -159,7 +160,7 @@ public class MapEditor : MonoBehaviour {
 			originalTile.mirrorEquivalent = mirrorTile;
 			mirrorTile.mirrorEquivalent = originalTile;
 			mirrorTile.isTheMirrorVersion = true;
-	}
+		}
 	}
 	private MapTile CreateAtPosition(int xPos, int yPos, Transform targetRoot, Quaternion targetRotation){
 		if (currentTileIndex >= levelTiles.Length){
