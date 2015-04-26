@@ -6,7 +6,7 @@ public enum Lane{
 	Bot
 }
 public class Creep : MonoBehaviour {
-
+	public string team;
 	public Transform target;
 	NavMeshAgent agent;
 	// Use this for initialization

@@ -81,7 +81,9 @@ public class PlayerMovement : MonoBehaviour{
 	}
 
 
-
+	public void DealDamage(int damage){
+		thisCharacterData.health -= damage;
+	}
 	void FixedUpdate()
 	{
 
@@ -199,6 +201,7 @@ public class PlayerMovement : MonoBehaviour{
 
 	void DIE(){
 		//stick in purgatory
+		Debug.Log("Died");
 		this.transform.position = HomeHub.transform.position;
 		//hide or blink graphics
 	}

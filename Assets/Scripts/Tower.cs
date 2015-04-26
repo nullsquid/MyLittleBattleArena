@@ -34,8 +34,9 @@ public class Tower : Building {
 		
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.tag == "Targetable"){
+		if(other.tag != this.gameObject.tag && !targets.Contains(other.gameObject)){
 			targets.Add(other.gameObject);
+
 		}
 	}
 	void OnTriggerExit2D(Collider2D other){
