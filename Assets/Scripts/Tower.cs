@@ -21,25 +21,16 @@ public class Tower : Building {
 	//Vector2 relativePos;
 	public float baseCoolDown = 1f;
 	private float coolDown = 1f;
-	public bool canShoot = true;
-	public List<GameObject> targets = new List<GameObject>();
+	//public bool canShoot = true;
 	// Use this for initialization
 	void Start () {
 	
 	}
 	void Update(){
-		if(canShoot){
+		//if(canShoot){
 			coolDown -= Time.deltaTime;
-		}
-	}
-	// Update is called once per frame
-	void FixedUpdate () {
-
-		//	hitColliders = Physics2D.OverlapCircle(transform.position, 1);
-		if(targets==null){
-
-		}
-		if(coolDown <= 0 && canShoot){
+		//}
+		if(coolDown <= 0){
 			coolDown = baseCoolDown;
 			inRange = Physics2D.OverlapCircleAll(gameObject.transform.position, range, Layer.Player.ToMask());
 			if(inRange != null && inRange.Length > 0){
@@ -54,6 +45,8 @@ public class Tower : Building {
 				}
 			}
 		}
+	}
+	void FixedUpdate () {
 		if (activeBullets.Count > 0){
 			foreach (KeyValuePair<Vector2, Transform> kvp in activeBullets){
 				if (Vector2.Distance(kvp.Value.position, kvp.Key) < 0.1f){
@@ -71,37 +64,4 @@ public class Tower : Building {
 		//Debug.Log(inRange[2]);
 
 	}
-
-
-	
-	public void Idle(){
-		//transform.rotation = Quaternion.Slerp(
-		return;
-
-
-
-
-	}
-	void Track(){
-
-		/*if(Vector2.Distance(gameObject.transform.position, this.transform.position) <= sight&&gameObject.tag == "Targetable"){
-			targets.Add(gameObject);
-
-		}*/
-		if(targets[0]!=null){
-			if(Vector2.Distance(targets[0].transform.position, this.transform.position) > sight){
-				targets.RemoveAt(0);
-			}
-		}
-		else if (targets[0] == null){
-			Idle();
-		}
-		//if(targets[0] != null){
-			
-			//Quaternion.LookRotation(relativePos);
-			//Shoot (targets[0]);
-		//}
-
-	}
-
 }

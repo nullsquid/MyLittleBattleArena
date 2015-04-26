@@ -57,13 +57,17 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private bool  canMove = false;
 	public Vector3 spawnPosition;
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
-	private Quaternion startRotation;
+	private  Vector3  startRotation;
 	void Start()
 	{
+
 		spawnPosition = transform.position;
 		Invoke("GetPlayerNumber",0.8f);
 
-		startRotation = this.transform.rotation;
+
+		Invoke("GetPlayerNumber",0.5f);
+
+		transform.eulerAngles = new Vector3(0,0,0);
 		SetClass();
 		walkSpeed = 0.10f;
 		sprintSpeed = walkSpeed + (walkSpeed / 2);
@@ -76,19 +80,18 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 
 
 	void GetPlayerNumber(){
-		print ("GettingNumber");
+		//print ("GettingNumber");
 		//Send a messsage up to the heavens, then take a number
-		GameObject theInputManager = GameObject.Find("InputManagerObject");
-
-		theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
-
+		//GameObject theInputManager = GameObject.Find("InputManagerObject");
+		Inputmanager.instance.AddPlayer(gameObject);
+		//theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
 
 	}
 
 	void SetPlayerNumber(int myNum){
 		//Send a messsage up to the heavens, then take a number
 		thisCharacterData.playerNumber = myNum;
-		print ("NumberGot"+ myNum.ToString());
+	//	print ("NumberGot"+ myNum.ToString());
 		canMove = true;
 	}
 
@@ -118,7 +121,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 				FireWeapon();
 			}
 			// Move 
-			this.transform.rotation = startRotation;
+			transform.eulerAngles = new Vector3(0,0,0);
 			Vector2 rawDirection = new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)); //There are propbably some superflous things here but it works.
 			Vector2 directionNormalized = rawDirection.normalized;
 			transform.Translate(directionNormalized * maxSpeed);
@@ -182,7 +185,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			print ("melee!");
 			break;
 		default:
-			print("defaultclass?");
+		//	print("defaultclass?");
 			break;
 		}
 	}
@@ -200,7 +203,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			BroadcastMessage("TryToLayMine");
 			break;
 		case CharacterClass.Melee:
-			print ("melee!");
+		//	print ("melee!");
 			break;
 		default:
 			print("defaultclass?");
@@ -222,18 +225,20 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 		this.transform.position = spawnPosition;
 		//this.transform.position = team.teamHub.transform.position;
 
+
+		//print (this.name+ " is DEAD");
+		//this.transform.position = HomeHub.transform.position;
+		
 		StartCoroutine (Respawn());
 		//hide or blink graphics
 	}
 	
 	IEnumerator Respawn(){
 		
-		this.transform.position = spawnPosition; //to be sure
+		//this.transform.position = spawnPosition; //to be sure
 		
 		yield return new WaitForSeconds(1);
-	
 		hasDied = false;
-		
 		this.thisCharacterData.health = 1;
 	}
 	

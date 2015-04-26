@@ -40,7 +40,6 @@ public class BulletScript : MonoBehaviour {
 		Destroy(gameObject);
 		coll.gameObject.SendMessage("DealDamage", 1,SendMessageOptions.DontRequireReceiver);
 
-		//print (coll.transform.name);
 		if( coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types
 			coll.gameObject.BroadcastMessage("EXPLODE");
 		}
@@ -49,15 +48,10 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {  //trigger instead?
-		//TAGS
-		//print (col.transform.name);
-		  //Use something better than name, get object types
+
 			col.gameObject.BroadcastMessage("EXPLODE",SendMessageOptions.DontRequireReceiver);
-			print ("HITTTT")	;
-			Debug.Log(col);
+
 			Destroy(gameObject);
-
-
 
 	}
 	
