@@ -13,6 +13,7 @@ public class Inputmanager : MonoBehaviour {
 
 	void Update(){
 
+<<<<<<< HEAD
 		if(keyboardInput){
 
 			P1_Horizontal = Input.GetAxis ("Horizontal");
@@ -49,6 +50,8 @@ public class Inputmanager : MonoBehaviour {
 
 
 
+=======
+>>>>>>> origin/master
 
 	}
 }
