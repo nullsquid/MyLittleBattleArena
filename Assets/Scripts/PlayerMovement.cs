@@ -23,41 +23,73 @@ public enum CharacterClass
 
 [System.Serializable]
 public class CharacterData {
-	public PlayerTeam team;
-	public int playerNumber;
-	public int health;
+
+
+		public int team;
+		public int playerNumber;
+		public int health;
+	    public Material RedMaterial, BlueMaterial;
+
+
+
 	public CharacterClass characterClass;
 	public PlayerColor playerColor;
 	//player team. red/blue tags.
-	public CharacterData(int p, int h, CharacterClass c, PlayerColor s)
+	public CharacterData(int t, int p, int h, CharacterClass c, PlayerColor s)
 	{
+		team = t;
 		playerNumber = p;
 		health = h;
 		characterClass = c;
 		playerColor = s;
 	}
 }
+
+
 public class PlayerMovement : MonoBehaviour{
+
+
+
 	//make this more dynamic
 	public GameObject HomeHub;
+
+
 	// Normal Movements Variables
 	private float walkSpeed;
 	private float curSpeed;
 	private float maxSpeed;
 	private float sprintSpeed;
 	public GameObject GunObject;
+
 	private float horzInput;
 	private float vertInput;
 	private bool fire = false;
 
-	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
+	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper,PlayerColor.red);
 
 	private Quaternion startRotation;
-	void Start(){
+	void Start()
+	{
 		startRotation = this.transform.rotation;
 		SetClass();
+	
+		if(thisCharacterData.team == 1){
+			this.gameObject.tag = "red";
+		}
+		else
+		{
+			this.gameObject.tag = "blue";
+		}
+		SetColor();
 		walkSpeed = 0.10f;
 		sprintSpeed = walkSpeed + (walkSpeed / 2);
+
+		
+	}
+
+
+	public void DealDamage(int damage){
+		thisCharacterData.health -= damage;
 	}
 	void FixedUpdate()
 	{
@@ -88,6 +120,8 @@ public class PlayerMovement : MonoBehaviour{
 		float rotateSpeed = 9999.0f;
 		//Vector3 moveDirection = gameObject.transform.position; 
 
+
+
 		if(vertInput != 0  || horzInput != 0){
 			float angle = Mathf.Atan2(vertInput, horzInput) * Mathf.Rad2Deg;
 		//print (angle.ToString());
@@ -96,7 +130,7 @@ public class PlayerMovement : MonoBehaviour{
 			}
 		}//alive
 	
- 	}
+ }
 	void GetInput(){
 
 		switch(thisCharacterData.playerNumber){
@@ -132,10 +166,36 @@ public class PlayerMovement : MonoBehaviour{
 
 	}
 
-	void SetColor(Material newMaterial){
+	void SetColor(){
 		//really not sure if this is the best way.
 		GameObject playerGraphic = transform.Find("RotationCorrection/Player Graphics").gameObject as GameObject;
-		playerGraphic.GetComponent<MeshRenderer>().material = newMaterial;
+
+		switch(thisCharacterData.playerColor){
+
+		case PlayerColor.red:
+			this.gameObject.tag = "red";
+//			print (this.transform.childCount.ToString()+" ");
+			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.RedMaterial;
+			break;
+
+		case PlayerColor.blue:
+			this.gameObject.tag = "blue";
+			playerGraphic.GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
+
+			//this.transform.Find("RotationCorrection/Player Graphics").GetComponent<MeshRenderer>().material = thisCharacterData.BlueMaterial;
+
+			break;
+
+		case PlayerColor.grey:
+			this.gameObject.tag = "grey";
+			break;
+
+		default :
+			this.gameObject.tag = "grey";//not sure if this makes a good default
+			break;
+		}
+
+		this.BroadcastMessage("SetTag", this.gameObject.tag);
 	}
 
 	void SetClass(){
@@ -184,6 +244,9 @@ public class PlayerMovement : MonoBehaviour{
 	bool hasDied = false;
 
 	void DIE(){
+		//stick in purgatory
+		Debug.Log("Died");
+
 		//stick in purgator
 		hasDied = true;
 		print (this.name+ " is DEAD");
