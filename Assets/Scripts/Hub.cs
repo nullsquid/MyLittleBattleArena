@@ -15,11 +15,14 @@ public class Hub : Building {
 
 	void Start(){
 
-		//canBeDamaged = false;
+		canBeDamaged = true;
 
 	}
 	// Update is called once per frame
 	void Update () {
+		//if(team.towers[0].isDestroyed == true && team.towers[1].isDestroyed == true){
+		//	canBeDamaged = true;
+		//}
 		//if(!team.towers.Contains(gameObject)){
 		//	canBeDamaged = true;
 		//}
