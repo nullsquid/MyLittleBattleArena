@@ -33,12 +33,16 @@ public class Tower : Building {
 			if(inRange != null && inRange.Length > 0){
 				for(int i = 0; i < inRange.Length; i++){
 					if (inRange[i] != null){
-						RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range, ~Layer.Buildings.ToMask());
-						if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
-							GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-							BulletScript bulletScr = bullet.GetComponent<BulletScript>();
-							if (bulletScr != null){
-								//bulletScr.targetPos = hit.transform.position;
+						PlayerMovement player = inRange[i].GetComponent<PlayerMovement>();
+						if (player != null && player.thisCharacterData.team != team){
+							RaycastHit2D hit = Physics2D.Raycast(transform.position, inRange[i].transform.position - transform.position, range, ~Layer.Buildings.ToMask());
+							if (hit.collider.gameObject.layer == Layer.Player.ToIndex()){
+								GameObject bullet = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
+								Rigidbody2D bulletRigid = bullet.GetComponent<Rigidbody2D>();
+								if (bulletRigid != null){
+									bulletRigid.AddForce ((hit.transform.position - transform.position) * 100);
+								}
+								break;
 							}
 						}
 					}
