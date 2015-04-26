@@ -14,9 +14,13 @@ public class Barrel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(tower.targets!=null){
+		if(tower.targets.Count >= 1){
 			target = tower.targets[0];
 			Track ();
+		}
+		else if(tower.targets.Count == 0){
+			tower.Idle();
+			Debug.Log("idle");
 		}
 	}
 

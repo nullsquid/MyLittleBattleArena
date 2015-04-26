@@ -28,12 +28,13 @@ public class Tower : Building {
 	void Update () {
 
 		//	hitColliders = Physics2D.OverlapCircle(transform.position, 1);
-		/*if(targets==null){
-			Idle ();
-		}*/
+		if(targets==null){
+
+		}
 		
 	}
 	void OnTriggerEnter2D(Collider2D other){
+
 		if(other.tag != this.gameObject.tag && !targets.Contains(other.gameObject)){
 			targets.Add(other.gameObject);
 
@@ -49,9 +50,9 @@ public class Tower : Building {
 		
 	}
 	
-	void Idle(){
+	public void Idle(){
 		//transform.rotation = Quaternion.Slerp(
-
+		return;
 
 
 
