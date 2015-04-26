@@ -77,9 +77,9 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void GetPlayerNumber(){
 		//print ("GettingNumber");
 		//Send a messsage up to the heavens, then take a number
-		GameObject theInputManager = GameObject.Find("InputManagerObject");
-
-		theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
+		//GameObject theInputManager = GameObject.Find("InputManagerObject");
+		Inputmanager.instance.AddPlayer(gameObject);
+		//theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
 
 	}
 
