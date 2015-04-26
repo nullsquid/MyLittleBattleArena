@@ -12,7 +12,7 @@ GameObject:
   - 58: {fileID: 5880874}
   - 50: {fileID: 5004556}
   - 114: {fileID: 11497364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Targetable
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 33: {fileID: 3330588}
   - 23: {fileID: 2319488}
   - 64: {fileID: 6431718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - 198: {fileID: 19819416}
   - 199: {fileID: 19961178}
   - 82: {fileID: 8251648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 434488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotationCorrection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425798}
   - 114: {fileID: 11457764}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MineLayerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,11 +376,9 @@ MonoBehaviour:
   HomeHub: {fileID: 0}
   GunObject: {fileID: 193878}
   thisCharacterData:
-    team: 1
+    team: {fileID: 0}
     playerNumber: 1
     health: 1
-    RedMaterial: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
-    BlueMaterial: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
     characterClass: 0
     playerColor: 0
 --- !u!120 &12073350

@@ -14,7 +14,7 @@ GameObject:
   - 58: {fileID: 5890592}
   - 114: {fileID: 11406268}
   - 96: {fileID: 9610148}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BulletBill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

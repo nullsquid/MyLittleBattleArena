@@ -8,7 +8,8 @@ public enum Layer{
 	Player = 8,
 	Level = 9,
 	Buildings = 10,
-	Projectiles = 11
+	Projectiles = 11,
+	Creep = 12
 }
 internal static class LayerExensions{
 	public static int ToIndex(this Layer layer){
