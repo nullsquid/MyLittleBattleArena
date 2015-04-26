@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		Invoke ("Fizzle", Lifetime);
+
 	}
 	
 	// Update is called once per frame
@@ -25,12 +26,14 @@ public class BulletScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		//TAGS
 
-		Destroy(gameObject);
+		Destroy(this.gameObject);
+		coll.gameObject.SendMessage("DealDamage", 1);
 
 	}
 	/*void OnTriggerEnter2D(Collider2D other){
-
-		SendMessage("DealDamage", 1);
-		Destroy(gameObject);
+		//if(other.gameObject.tag == "Building"||other.gameObject.tag == "Actor"){
+			SendMessage("DealDamage", 1);
+			Destroy(gameObject);
+		//}
 	}*/
 }
