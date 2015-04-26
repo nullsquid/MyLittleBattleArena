@@ -20,6 +20,7 @@ public class MineExplosion : MonoBehaviour {
 		startTime = Time.time;
 
 		AudioSource audio = GetComponent<AudioSource>();
+//		print ()
 		audio.pitch = newPitch;
 		audio.Play();
 	}

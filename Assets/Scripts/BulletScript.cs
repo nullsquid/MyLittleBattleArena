@@ -38,7 +38,7 @@ public class BulletScript : MonoBehaviour {
 
 
 		Destroy(gameObject);
-		coll.gameObject.SendMessage("DealDamage", 1);
+		coll.gameObject.SendMessage("DealDamage", 1,SendMessageOptions.DontRequireReceiver);
 
 		//print (coll.transform.name);
 		if( coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types

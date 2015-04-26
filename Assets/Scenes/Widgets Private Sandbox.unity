@@ -806,7 +806,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.playerNumber
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.characterClass
@@ -1126,7 +1126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.playerNumber
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.characterClass
@@ -2708,47 +2708,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 447016, guid: abe2e73721bcb4635b4742a77ce85bc3, type: 2}
   m_PrefabInternal: {fileID: 395464491}
---- !u!1 &396116535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 396116537}
-  - 114: {fileID: 396116536}
-  m_Layer: 0
-  m_Name: InputManagerObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &396116536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 396116535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ba9aaab5aac4b2e966357c1fc9daa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardInput: 1
-  joystickInput: 0
---- !u!4 &396116537
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 396116535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.859999657, y: 5.31999969, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 691200620}
-  m_RootOrder: 1
 --- !u!1001 &410416938
 Prefab:
   m_ObjectHideFlags: 0
@@ -4277,9 +4236,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1825570241}
-  - {fileID: 396116537}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1001 &698078546
 Prefab:
   m_ObjectHideFlags: 0
@@ -6995,12 +6953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e799f83b8ab984ebe96a3dcd0ec5f98d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MainSpacing: 10
-  m_SubSplit: 5
-  m_LineCount: 10
-  m_CenterLineColor: {r: 1, g: 1, b: 1, a: 1}
-  m_MainLineColor: {r: 1, g: 1, b: 1, a: .5}
-  m_SubLineColor: {r: 1, g: 1, b: 1, a: .25}
 --- !u!4 &1128645845
 Transform:
   m_ObjectHideFlags: 0
@@ -8798,7 +8750,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.playerNumber
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11497364, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: thisCharacterData.characterClass
@@ -8969,6 +8921,56 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 492762, guid: 69c4a84ea5e334ed1a77c9e1edf416ed, type: 2}
   m_PrefabInternal: {fileID: 1475470619}
+--- !u!1001 &1477845183
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449560, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426168, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: keyboardInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11426168, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+      propertyPath: joystickInput
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d15998451869b4234a8ce984c9a9d4d0, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1487526378
 Prefab:
   m_ObjectHideFlags: 0
@@ -10651,7 +10653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476164, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 115840, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
       propertyPath: m_Name
@@ -11181,8 +11183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457bf0a55679848e99a08c0c10ab38b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
-  blue: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
 --- !u!4 &1825570241
 Transform:
   m_ObjectHideFlags: 0

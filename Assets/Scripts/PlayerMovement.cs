@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private float horzInput;
 	private float vertInput;
 	private bool fire = false;
+	private bool  canMove = false;
 
 	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
 	private Quaternion startRotation;
@@ -76,9 +77,9 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void GetPlayerNumber(){
 		print ("GettingNumber");
 		//Send a messsage up to the heavens, then take a number
-		GameObject theInputManager =	GameObject.Find("InputManagerObject");
+		GameObject theInputManager = GameObject.Find("InputManagerObject");
 
-		theInputManager.SendMessage("AddPlayer",this.gameObject);;
+		theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
 
 
 	}
@@ -86,6 +87,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	void SetPlayerNumber(int myNum){
 		//Send a messsage up to the heavens, then take a number
 		thisCharacterData.playerNumber = myNum;
+		canMove = true;
 	}
 
 
@@ -98,13 +100,17 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 		else if(thisCharacterData.health <=0 && (hasDied == true)){
 			//wait for respwan i guess?
 		}
+		else if(!canMove){
+			//wait for stuff to happen
+
+		}
+
 		else{
 			
 			curSpeed = walkSpeed; 
 			maxSpeed = curSpeed;
 			
 			GetInput();
-			
 			
 			if(fire){
 				FireWeapon();
@@ -121,7 +127,6 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			if(vertInput != 0  || horzInput != 0){
 				float angle = Mathf.Atan2(vertInput, horzInput) * Mathf.Rad2Deg;
 				//print (angle.ToString());
-				
 				GunObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotateSpeed * Time.deltaTime); 
 			}
 		}//alive
@@ -156,9 +161,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 			vertInput = Inputmanager.P1_Vertical;
 			fire = Inputmanager.P1_Fire;
 			break;
-		}
-		
-		
+		}	
 		
 	}
 	
@@ -225,7 +228,7 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 		this.transform.position = HomeHub.transform.position; //to be sure
 		
 		yield return new WaitForSeconds(1);
-		
+	
 		hasDied = false;
 		
 		this.thisCharacterData.health = 1;
