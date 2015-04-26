@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2345274}
   - 58: {fileID: 5861032}
   - 114: {fileID: 11450870}
-  - 58: {fileID: 5837524}
   m_Layer: 10
   m_Name: Tower
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.38754702, y: 10.8350201, z: 0}
+  m_LocalPosition: {x: 19.2722645, y: 7.32121325, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,19 +62,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162114}
   m_Mesh: {fileID: 4300012, guid: 4fd768b4173934e8f80c3ceacc67fb6c, type: 3}
---- !u!58 &5837524
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162114}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
 --- !u!58 &5861032
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -105,7 +91,8 @@ MonoBehaviour:
   team: {fileID: 0}
   cooldown: 2
   range: 2.5
-  targets: []
+  projectileSpeed: 0
+  baseCoolDown: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
