@@ -15,36 +15,20 @@ public class Inputmanager : MonoBehaviour {
 	public bool keyboardInput = true;
 	public bool joystickInput = false;
 
-	static public int PlayerCountInit = 1;
+	static public int playerCountInit {get; private set;}
 	GameObject objectReference;
 
-	List<GameObject> playerList = new List<GameObject>();
 
 	void Awake(){
 		instance = this;
 	}
-	void Start(){
+	public void AddPlayer(PlayerMovement PlayerReference){//USE LAYERS INSTEAD LATER
+		playerCountInit++;
+		PlayerReference.thisCharacterData.playerNumber = playerCountInit;
+	}
 	
-		Invoke("numberPlayers", 1.3f);
 
-	}
-
-	 public void AddPlayer(GameObject PlayerReference){//USE LAYERS INSTEAD LATER
-
-		playerList.Add(PlayerReference);
-	}
-
-	void numberPlayers(){
-		int i = 1;
-	          foreach (GameObject player in playerList){
-		//	print(i);
-			player.SendMessage("SetPlayerNumber",i,SendMessageOptions.DontRequireReceiver);
-			i++;
-
-		}
-	 }
-
-	void FixedUpdate(){
+	void Update(){
 
 		if(keyboardInput){
 
