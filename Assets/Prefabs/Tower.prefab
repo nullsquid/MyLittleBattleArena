@@ -15,8 +15,8 @@ GameObject:
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &162114
 GameObject:
@@ -35,8 +35,8 @@ GameObject:
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &183096
 GameObject:
@@ -51,8 +51,8 @@ GameObject:
   m_Name: Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &409380
 Transform:
@@ -60,8 +60,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .523194313, y: -.494283795, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
+  m_LocalPosition: {x: 1.08000004, y: -.209999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 456684}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 2, z: 0}
+  m_LocalPosition: {x: 11, y: 12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456684}
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sight: 0
   health: 10
+  team: blue
   cooldown: 2
   targets: []
 --- !u!114 &11486790
@@ -220,6 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741861edf76eefc44a99809ca76742b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolDown: 1
+  barrel: {fileID: 11444666}
+  canShoot: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

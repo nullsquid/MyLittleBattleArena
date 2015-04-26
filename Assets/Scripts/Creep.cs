@@ -32,8 +32,8 @@ public class Creep : MonoBehaviour {
 	void OnCollisionEnter2D(Collider2D other){
 		if(other.gameObject.tag != this.gameObject.tag){
 			other.SendMessage("DealDamage", 1);
-			Destroy(gameObject);
-
+			Destroy(this.gameObject);
+			Debug.Log("damage");
 		}
 	}
 }
