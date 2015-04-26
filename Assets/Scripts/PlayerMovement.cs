@@ -11,9 +11,6 @@ using System.Collections;
  * 
 */
 
-public enum PlayerNumber{one,two,three,four};
-public enum PlayerColor{red,blue,grey}
-
 public enum CharacterClass
 {
 	Sniper,
@@ -27,14 +24,12 @@ public class CharacterData {
 	public int playerNumber;
 	public int health;
 	public CharacterClass characterClass;
-	public PlayerColor playerColor;
+	//public PlayerColor playerColor;
 	//player team. red/blue tags.
-	public CharacterData(int p, int h, CharacterClass c, PlayerColor s)
+	public CharacterData(int h, CharacterClass c)
 	{
-		playerNumber = p;
 		health = h;
 		characterClass = c;
-		playerColor = s;
 	}
 }
 
@@ -49,28 +44,25 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 	private float walkSpeed;
 	private float curSpeed;
 	private float maxSpeed;
-	private float sprintSpeed;
+	//private float sprintSpeed;
 	public GameObject GunObject;
 	private float horzInput;
 	private float vertInput;
 	private bool fire = false;
-	private bool  canMove = false;
+	private bool  canMove = true;
 	public Vector3 spawnPosition;
-	public CharacterData thisCharacterData = new CharacterData(1,1,CharacterClass.Sniper,PlayerColor.red);
+	public CharacterData thisCharacterData = new CharacterData(100,CharacterClass.Sniper);
 	private  Vector3  startRotation;
 	void Start()
 	{
 
 		spawnPosition = transform.position;
-		Invoke("GetPlayerNumber",0.8f);
-
-
-		Invoke("GetPlayerNumber",0.5f);
+		GetPlayerNumber();
 
 		transform.eulerAngles = new Vector3(0,0,0);
 		SetClass();
 		walkSpeed = 0.10f;
-		sprintSpeed = walkSpeed + (walkSpeed / 2);
+		//sprintSpeed = walkSpeed + (walkSpeed / 2);
 	}
 	
 	
@@ -80,21 +72,11 @@ public class PlayerMovement : MonoBehaviour{  //this should probably be renamed
 
 
 	void GetPlayerNumber(){
-		//print ("GettingNumber");
-		//Send a messsage up to the heavens, then take a number
-		//GameObject theInputManager = GameObject.Find("InputManagerObject");
-		Inputmanager.instance.AddPlayer(gameObject);
-		//theInputManager.SendMessage("AddPlayer",this.gameObject,SendMessageOptions.DontRequireReceiver);
+		if (thisCharacterData.playerNumber == 0){
+			Inputmanager.instance.AddPlayer(this);
+		}
 
 	}
-
-	void SetPlayerNumber(int myNum){
-		//Send a messsage up to the heavens, then take a number
-		thisCharacterData.playerNumber = myNum;
-	//	print ("NumberGot"+ myNum.ToString());
-		canMove = true;
-	}
-
 
 	void FixedUpdate()
 	{
