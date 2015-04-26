@@ -4,13 +4,13 @@ using System.Collections.Generic;
 public class Tower : Building {
 	
 	public float cooldown;
-	float distanceToTarget;
+	//float distanceToTarget;
 	//public GameObject target;
-	public GameObject projectile;
+	//public GameObject projectile;
 	float projectileSpeed;
 	float range;
 	float rotateSpeed;
-	Vector2 relativePos;
+	//Vector2 relativePos;
 	public List<GameObject> targets = new List<GameObject>();
 	
 	// Use this for initialization
@@ -30,8 +30,6 @@ public class Tower : Building {
 		if(other.tag == "Targetable"){
 			targets.Add(other.gameObject);
 		}
-		
-		
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if(other.gameObject == targets[0]){
