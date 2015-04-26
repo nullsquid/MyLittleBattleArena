@@ -35,6 +35,8 @@ public class PlayerTeamManager : MonoBehaviour {
 		}
 	}
 	IEnumerator ResetTimer(){
+		winText.enabled = true;
+		winBG.enabled = true;
 		yield return new WaitForSeconds(3f);
 		allowReset = true;
 	}
