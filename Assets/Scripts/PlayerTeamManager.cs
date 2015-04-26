@@ -17,12 +17,12 @@ public class PlayerTeamManager : MonoBehaviour {
 	}
 	void Update(){
 		if (!gameOver){
-			if (blueTeam.teamHub != null && !blueTeam.teamHub.isActiveAndEnabled){
+			if (blueTeam.teamHub != null && blueTeam.teamHub.isDestroyed){
 				winBG.color = redTeam.teamMaterial.color;
 				winText.text = "RED TEAM WINS";
 				gameOver = true;
 				StartCoroutine(ResetTimer());
-			}else if (redTeam.teamHub != null && !redTeam.teamHub.isActiveAndEnabled){
+			}else if (redTeam.teamHub != null && redTeam.teamHub.isDestroyed){
 				winBG.color = blueTeam.teamMaterial.color;
 				winText.text = "BLUE TEAM WINS";
 				gameOver = true;
