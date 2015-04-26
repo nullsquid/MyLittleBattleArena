@@ -51,6 +51,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &150186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 419940}
+  - 114: {fileID: 11493144}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &156770
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +129,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &419940
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.9939117, y: 9.94666576, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 494314}
+  m_RootOrder: 5
 --- !u!4 &463040
 Transform:
   m_ObjectHideFlags: 1
@@ -189,6 +217,7 @@ Transform:
   - {fileID: 463040}
   - {fileID: 473848}
   - {fileID: 466050}
+  - {fileID: 419940}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &494840
@@ -242,7 +271,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 120964}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -288,7 +317,8 @@ MonoBehaviour:
   - {fileID: 141394, guid: 02234a2b40706431d8b4fb29fcdf037e, type: 2}
   - {fileID: 162114, guid: c44e76f774afcbb49b062a30066c7ffd, type: 2}
   - {fileID: 197108, guid: efa6fad1eec0e6d4c8fed963bebf4f2c, type: 2}
-  inEditMode: 1
+  - {fileID: 115840, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
+  inEditMode: 0
   tileBrushTr: {fileID: 463040}
   mapDimensions: {x: 43, y: 32}
 --- !u!114 &11446974
@@ -320,6 +350,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueTeam: {fileID: 11407486}
   redTeam: {fileID: 11446974}
+--- !u!114 &11493144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ba9aaab5aac4b2e966357c1fc9daa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardInput: 1
+  joystickInput: 0
 --- !u!212 &21280234
 SpriteRenderer:
   m_ObjectHideFlags: 1
