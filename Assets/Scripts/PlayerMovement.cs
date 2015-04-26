@@ -1,11 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/*
+ * TODO:  Bullet Collisions knock the player out of Whack.  Really badly.
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+*/
 
 public enum PlayerNumber{one,two,three,four};
+public enum PlayerColor{red,blue,grey}
 
-
+public enum CharacterClass
+{
+	Sniper,
+	DemoMan,
+	Melee
+}
 
 [System.Serializable]
 public class CharacterData {
@@ -14,12 +28,17 @@ public class CharacterData {
 		public int team;
 		public int playerNumber;
 		public int health;
+		
+
+
+	public CharacterClass characterClass;
 	//player team. red/blue tags.
-	public CharacterData(int t, int p, int h)
+	public CharacterData(int t, int p, int h, CharacterClass c)
 	{
 		team = t;
 		playerNumber = p;
 		health = h;
+		characterClass = c;
 	}
 }
 
@@ -28,6 +47,8 @@ public class PlayerMovement : MonoBehaviour{
 
 
 
+	//make this more dynamic
+	GameObject HomeHub;
 
 
 	// Normal Movements Variables
@@ -41,10 +62,11 @@ public class PlayerMovement : MonoBehaviour{
 	private float vertInput;
 	private bool fire = false;
 
-	public CharacterData thisCharacterData = new CharacterData(1,1,1);
+	public CharacterData thisCharacterData = new CharacterData(1,1,1,CharacterClass.Sniper);
+
 	void Start()
 	{
-
+		SetClass();
 		if(thisCharacterData.team == 1){
 			this.gameObject.tag = "red";
 		}
@@ -62,14 +84,26 @@ public class PlayerMovement : MonoBehaviour{
 
 	void FixedUpdate()
 	{
-		GetInput();
-		//print(Inputmanager.P1_Horizontal);
-		curSpeed = walkSpeed;
-		maxSpeed = curSpeed;
-		
-		// Move 
-		transform.Translate (new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)));
 
+		if(thisCharacterData.health <=0){
+			DIE();
+		}
+		else{
+
+		curSpeed = walkSpeed; 
+		maxSpeed = curSpeed;
+
+		GetInput();
+
+
+		if(fire){
+			FireWeapon();
+		}
+		// Move 
+
+		Vector2 rawDirection = new Vector2(Mathf.Lerp(0, horzInput * curSpeed, 0.8f), Mathf.Lerp(0, vertInput * curSpeed, 0.8f)); //There are propbably some superflous things here but it works.
+		Vector2 directionNormalized = rawDirection.normalized;
+		transform.Translate(directionNormalized * maxSpeed);
 
 		float rotateSpeed = 9999.0f;
 		//Vector3 moveDirection = gameObject.transform.position; 
@@ -81,7 +115,8 @@ public class PlayerMovement : MonoBehaviour{
 		//print (angle.ToString());
 
 		GunObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotateSpeed * Time.deltaTime); 
-		}
+			}
+		}//alive
 	
  }
 	void GetInput(){
@@ -118,4 +153,59 @@ public class PlayerMovement : MonoBehaviour{
 
 
 	}
+
+	void SetClass(){
+		//not sure what the point of this was.
+
+		switch(thisCharacterData.characterClass){
+		
+		case CharacterClass.Sniper:
+			print ("Sniper!");
+			break;
+		case CharacterClass.DemoMan:
+			print ("Demo!");
+			break;
+		case CharacterClass.Melee:
+			print ("melee!");
+			break;
+		default:
+			print("defaultclass?");
+				break;
+		}
+	}
+
+	void  FireWeapon(){
+
+		switch(thisCharacterData.characterClass){
+			
+		case CharacterClass.Sniper:
+			//print ("Sniper!");
+			BroadcastMessage("TryToFire");
+			break;
+		case CharacterClass.DemoMan:
+			//print ("Demo!");
+			BroadcastMessage("TryToLayMine");
+			break;
+		case CharacterClass.Melee:
+			print ("melee!");
+			break;
+		default:
+			print("defaultclass?");
+			break;
+		}
+
+
+	}
+
+	void DIE(){
+		//stick in purgatory
+		this.transform.position = HomeHub.transform.position;
+		//hide or blink graphics
+	}
+
+	void Respawn(){
+		this.transform.position = HomeHub.transform.position;
+		this.thisCharacterData.health = 1;
+	}
+
 }

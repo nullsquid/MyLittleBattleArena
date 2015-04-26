@@ -14,10 +14,10 @@ public class BulletScript : MonoBehaviour {
 
 
 	public float Lifetime;
+	private string color = "grey";
 	// Use this for initialization
 	void Awake () {
 		Invoke ("Fizzle", Lifetime);
-
 	}
 	
 	// Update is called once per frame
@@ -32,11 +32,18 @@ public class BulletScript : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-	void OnCollisionEnter2D(Collision2D coll) {
+	void OnCollisionEnter2D(Collision2D coll) {  //trigger instead?
 		//TAGS
 
-		Destroy(this.gameObject);
+
+		Destroy(gameObject);
 		coll.gameObject.SendMessage("DealDamage", 1);
+
+		//print (coll.transform.name);
+		if(coll.transform.tag == color && coll.gameObject.GetComponent<MineTimer>() !=  null){  //Use something better than name, get object types
+			coll.gameObject.BroadcastMessage("EXPLODE");
+		}
+		Destroy(gameObject);
 
 	}
 	/*void OnTriggerEnter2D(Collider2D other){
