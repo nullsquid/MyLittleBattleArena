@@ -11,6 +11,7 @@ public static class MapEditorSaving {
 	public const string defaultFileName = "XMLExample";	//When we do not give
 	private static string filePath{
 		get{
+			Debug.Log( Application.dataPath + "/../GameData/");
 			return Application.dataPath + "/../GameData/";	//Saves to the resources folder.
 		}
 	}
