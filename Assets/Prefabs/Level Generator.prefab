@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &118588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 466050}
-  - 114: {fileID: 11483086}
-  - 114: {fileID: 11407486}
-  - 114: {fileID: 11446974}
-  m_Layer: 0
-  m_Name: TeamManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &120964
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,22 +28,6 @@ GameObject:
   - 23: {fileID: 2315992}
   m_Layer: 0
   m_Name: Brush
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &150186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 419940}
-  - 114: {fileID: 11493144}
-  m_Layer: 0
-  m_Name: InputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,18 +95,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &419940
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150186}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.9939117, y: 9.94666576, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 494314}
-  m_RootOrder: 5
 --- !u!4 &463040
 Transform:
   m_ObjectHideFlags: 1
@@ -153,18 +107,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 494314}
   m_RootOrder: 2
---- !u!4 &466050
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 494314}
-  m_RootOrder: 4
 --- !u!4 &473848
 Transform:
   m_ObjectHideFlags: 1
@@ -216,8 +158,6 @@ Transform:
   - {fileID: 483312}
   - {fileID: 463040}
   - {fileID: 473848}
-  - {fileID: 466050}
-  - {fileID: 419940}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &494840
@@ -276,22 +216,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &11407486
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862a3cca2254649cb8aba1ef1a08bb24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamName: 1
-  teamMaterial: {fileID: 2100000, guid: a5c9b1823dc734dd4829621434ad2792, type: 2}
-  characters: []
-  buildings: []
-  teamHub: {fileID: 0}
 --- !u!114 &11444560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,51 +242,9 @@ MonoBehaviour:
   - {fileID: 162114, guid: c44e76f774afcbb49b062a30066c7ffd, type: 2}
   - {fileID: 197108, guid: efa6fad1eec0e6d4c8fed963bebf4f2c, type: 2}
   - {fileID: 115840, guid: e537ade5c10244d24b26265350de2ef9, type: 2}
-  inEditMode: 0
+  inEditMode: 1
   tileBrushTr: {fileID: 463040}
   mapDimensions: {x: 43, y: 32}
---- !u!114 &11446974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 862a3cca2254649cb8aba1ef1a08bb24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teamName: 2
-  teamMaterial: {fileID: 2100000, guid: e8ccc72b9820641239d4aa49db117c26, type: 2}
-  characters: []
-  buildings: []
-  teamHub: {fileID: 0}
---- !u!114 &11483086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be81e7ccd6c6145a9ac0bea8e9489809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blueTeam: {fileID: 11407486}
-  redTeam: {fileID: 11446974}
---- !u!114 &11493144
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ba9aaab5aac4b2e966357c1fc9daa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardInput: 1
-  joystickInput: 0
 --- !u!212 &21280234
 SpriteRenderer:
   m_ObjectHideFlags: 1
