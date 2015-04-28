@@ -293,9 +293,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 871427314}
   - 20: {fileID: 871427313}
-  - 92: {fileID: 871427312}
-  - 124: {fileID: 871427311}
   - 81: {fileID: 871427310}
+  - 114: {fileID: 871427311}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -310,20 +309,22 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871427309}
   m_Enabled: 1
---- !u!124 &871427311
-Behaviour:
+--- !u!114 &871427311
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 871427309}
   m_Enabled: 1
---- !u!92 &871427312
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871427309}
-  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290b5fb22aab54f5fa99fdbb37e91e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  speed: .300000012
+  zoomSpeed: .300000012
+  minZoom: 4
+  maxZoom: 10
 --- !u!20 &871427313
 Camera:
   m_ObjectHideFlags: 0
@@ -490,7 +491,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11444560, guid: 3be155a0b25a64d8f95ccc0a6f8eef23, type: 2}
       propertyPath: inEditMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3be155a0b25a64d8f95ccc0a6f8eef23, type: 2}
