@@ -12,7 +12,7 @@ public static class MapEditorSaving {
 	private static string filePath{
 		get{
 			Debug.Log( Application.dataPath + "/../GameData/");
-			return Application.dataPath + "/../GameData/";	//Saves to the resources folder.
+ 			return Application.dataPath + "/../GameData/";	//Saves to the resources folder.
 		}
 	}
 	#endregion
