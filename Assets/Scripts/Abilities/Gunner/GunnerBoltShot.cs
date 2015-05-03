@@ -6,7 +6,7 @@ public class GunnerBoltShot : CharacterAbility {
 	public GameObject bullet;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
