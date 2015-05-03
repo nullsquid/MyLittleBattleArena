@@ -16,9 +16,7 @@ public class PlayerTeamManager : MonoBehaviour {
 		winBG.enabled = false;
 	}
 	void Update(){
-		if (Input.GetKeyDown(KeyCode.Escape)){
-			Application.Quit();
-		}
+
 		if (!gameOver){
 			if (blueTeam.teamHub != null && blueTeam.teamHub.isDestroyed){
 				winBG.color = redTeam.teamMaterial.color;
