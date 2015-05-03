@@ -33,6 +33,11 @@ public class GunnerBulletHail : CharacterAbility {
 			yield return new WaitForSeconds(nextBulletStep);
 		}
 	}
+
+	IEnumerator Cooldown(){
+		yield return new WaitForSeconds(1); //TODO: Make this reference actual cooldown
+	}
+
 	public override void OnActivate(){
 		//BulletHail();
 		//if (isActivated

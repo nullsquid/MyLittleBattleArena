@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BomberUltScorch : CharacterAbility {
 
+	private float chargeTimeMaximum = 5.0f;
+	private float chargeStep = 1.0f;
 	// Use this for initialization
 	void Start () {
 	
@@ -20,5 +22,12 @@ public class BomberUltScorch : CharacterAbility {
 		//Triggers all nearby bombs
 		//try with colliders and with ignoring colliders
 
+	}
+	IEnumerator ChargeUp(){
+
+		yield return new WaitForSeconds(chargeStep);
+	}
+	public override void OnActivate(){
+		Scorch();
 	}
 }
