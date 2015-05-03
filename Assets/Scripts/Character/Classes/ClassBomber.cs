@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mage : CharacterClass {
+public class ClassBomber : CharacterClass {
 
 	// Use this for initialization
 	void Start () {

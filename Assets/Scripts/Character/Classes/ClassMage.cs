@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Gunner : CharacterClass {
+public class ClassMage : CharacterClass {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,6 @@ public class Gunner : CharacterClass {
 	void Update () {
 	
 	}
+
+
 }

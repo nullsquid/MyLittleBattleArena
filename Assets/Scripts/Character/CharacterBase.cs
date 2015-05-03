@@ -15,7 +15,9 @@ public class CharacterBase : MonoBehaviour{  //this should probably be renamed
 	private bool ability1Pressed;
 	private bool ability2Pressed;
 	private bool ability3Pressed;
+	//private bool canMove = true;
 	private bool canMove = true;
+	public bool CanMove {get{return canMove;} set{ canMove = value;}}
 	public Vector3 spawnPosition {get; set;}
 	public Quaternion spawnRotation {get; set;}
     [SerializeField] private float respawnDuration = 2f;	//TODO visible timer

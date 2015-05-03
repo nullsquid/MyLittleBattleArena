@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bomber : CharacterClass {
+public class ClassGunner : CharacterClass {
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +11,9 @@ public class Bomber : CharacterClass {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void abilityShootGun(){
+
 	}
 }
