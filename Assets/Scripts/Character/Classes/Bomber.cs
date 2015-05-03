@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bomber : MonoBehaviour {
+public class Bomber : CharacterClass {
 
 	// Use this for initialization
 	void Start () {
