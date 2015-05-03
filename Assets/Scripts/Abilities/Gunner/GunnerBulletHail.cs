@@ -21,11 +21,13 @@ public class GunnerBulletHail : CharacterAbility {
 		//OnDeactivate ==> character.canmove = true;
 	}
 	IEnumerator ShotLength(){
-
+		BulletHail();
 		yield return new WaitForSeconds(nextBulletStep);
 	}
 	public override void OnActivate(){
-		BulletHail();
+		//BulletHail();
+		//if (isActivated
+		StartCoroutine("ShotLength");
 		character.GetComponent<CharacterBase>().CanMove = true;
 	}
 
