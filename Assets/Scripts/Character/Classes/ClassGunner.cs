@@ -10,11 +10,12 @@ public class ClassGunner : CharacterClass {
 
 		ability1.unlocked = true;
 		ability2.unlocked = false;
+		ability3.unlocked = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 
